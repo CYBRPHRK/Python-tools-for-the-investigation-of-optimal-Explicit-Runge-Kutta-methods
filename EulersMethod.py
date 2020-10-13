@@ -3,25 +3,47 @@ import bokeh.plotting as bp
 import Simple as s
 import PredatorPrey as pp
 
-eeOld = 0
+y0 = formulaNumber = eeOld = 0
 
 def displayFormulas():
-    print("Simple: f1 t tfinal y ")
-    print("Predator Prey: f2 x y alpha beta gamma delta")
+    print("Simple: f1 y0") 
+    print("Predator Prey for x: f2 x y alpha beta gamma delta")
+    print("Predator Prey for y: f3 x y alpha beta gamma delta")
 
-def formula(fname):
+def setFormulaValues(fname):
+    global formulaNumber, y0
     data = fname.split()
+    for i in range(1, len(data)):
+        data[i] = int(data[i])
+        
     if (data[0] == "f1"):
-        s.simple(data[1],data[2])
+        formulaNumber = 1
+        y0 = data[1]
     elif (data[0] == "f2"):
-        pp.predatorPrey(data[1], data[2], data[3], data[4], data[5], data[6])
+        formulaNumber = 2
+        y0 = data[1]
+        pp.setConstants(data[1], data[2], data[3], data[4], data[5], (data[6]))
+    elif (data[0] == "f3"):
+        formulaNumber = 3
+        y0 = data[2]
+        pp.setConstants(data[1], data[2], data[3], data[4], data[5], data[6])
     else:
         print ("No formula with that name.")
+        exit(0)
+        
+def formula(t, y):
+    if (formulaNumber == 1):
+        return s.simple(t, y)
+    elif (formulaNumber == 2):
+        return pp.predatorPreyForX(t, y)
+    elif (formulaNumber == 3):
+        return pp.predatorPreyForY(t, y)
 
 def eulersMethod(steps):
+    global y0
     t = 0
     tfinal = 1
-    y = 1
+    y = y0
     #i = 1
     h = (tfinal - t) / steps
     tt = [t]
@@ -29,7 +51,7 @@ def eulersMethod(steps):
     ee = []
     
     while (t < tfinal):
-        y = y + (h * s.simple(t, y))
+        y = y + (h * formula(t, y))
         t = t + h
         #t = i * h
         #i = i + 1

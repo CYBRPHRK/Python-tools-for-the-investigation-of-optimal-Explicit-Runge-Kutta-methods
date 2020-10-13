@@ -1,8 +1,4 @@
-#t = 0
-tfinal = 1
-#y = 1
-i = 1
-#h = (tfinal - t)
+y = 1
 
 def simple(t, y):
     return (y * (-1))
