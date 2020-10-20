@@ -1,12 +1,11 @@
-
 import EulersMethod as em
 
 em.displayFormulas()
-fname = input("Enter the formula with values respectively (Use spaces between the values like shown above):\n")
+fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
 em.setFormulaValues(fname)
 
 j = 1
-while(j <= 512):
+while(j <= 8):
     ee, tt, yy = em.eulersMethod(j)
-    #em.findOrder(ee, j)
+    em.findOrder(ee, j)
     j = j * 2

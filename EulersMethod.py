@@ -2,19 +2,20 @@ import math
 import bokeh.plotting as bp
 import Simple as s
 import PredatorPrey as pp
+import copy
 
-t0 = tf = formulaNumber = eeOld = 0
-y0 = []
+t0 = tf = formulaNumber = 0
+eeOld = y0 = []
 
 def displayFormulas():
     print("Simple: f1 t tfinal y0") 
     print("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
 
 def setFormulaValues(fname):
-    #global formulaNumber, t0, tf, y0
+    global formulaNumber, t0, tf, y0
     data = fname.split()
     for i in range(1, len(data)):
-        data[i] = int(data[i])
+        data[i] = float(data[i])
         
     if (data[0] == "f1"):
         formulaNumber = 1
@@ -23,7 +24,7 @@ def setFormulaValues(fname):
         formulaNumber = 2
         y0.append(data[3])
         y0.append(data[4])
-        pp.setConstants(data[5], (data[6], data[7], data[8]))
+        pp.setConstants(data[5], data[6], data[7], data[8])
     else:
         print ("No formula with that name.")
         exit(0)
@@ -36,35 +37,44 @@ def formula(t, y):
         return pp.predatorPrey(t, y)
 
 def eulersMethod(steps):
-    #global t0, tf, y0
     t = t0
     tfinal = tf
-    y = y0
+    y = copy.deepcopy(y0)
     h = (tfinal - t) / steps
     tt = [t]
-    yy = [y]
+    yy = [copy.deepcopy(y)]
     ee = []
     
     while (t < tfinal):
+        fy = formula(t, y)
         for i in range(0, len(y)):
-            y[i] = y[i] + (h * formula(t, y))
+            y[i] = y[i] + (h * fy[i])
         #y = y + (h * formula(t, y))
         t = t + h
         tt.append(t)
-        yy.append(y)
+        yy.append(copy.deepcopy(y))
         
     for j in range(0, len(yy)):
         e = []
         for k in yy[j]:
             e.append(k - math.exp((-1) * tt[j]))
-        ee.append(e)
+        ee.append(copy.deepcopy(e))
+    print ("Start")
+    for e in ee:
+        print (e)
     return ee, tt, yy
 
 def findOrder(ee, steps):
     global eeOld
+    i = 0
     if (steps > 1):
-        print ("ee: " + str(ee[len(ee) - 1]) + "\teeOld: " + str(eeOld) +
-                   "\tsteps: " + str(steps) + "\teeOld/ee: " + str(eeOld/ee[len(ee) - 1]))
+        for e in ee[len(ee) -1]:
+            print ("ee[", i, "]: ", e, "\teeOld[", i, "]: ", eeOld[i],
+                       "\tsteps: ", steps, "\teeOld/ee: ", eeOld[i]/e)
+            i += 1
+        #print ("ee: " + str(ee[len(ee) - 1]) + "\teeOld: " + str(eeOld) +
+                   #"\tsteps: " + str(steps) + "\teeOld/ee: " + str(eeOld/ee[len(ee) - 1]))
+        print("\n")
     eeOld = ee[len(ee) - 1]
 
 def plotGraph(index, ee, tt, yy):
