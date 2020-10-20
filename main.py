@@ -1,3 +1,4 @@
+
 import EulersMethod as em
 
 em.displayFormulas()
@@ -7,5 +8,5 @@ em.setFormulaValues(fname)
 j = 1
 while(j <= 512):
     ee, tt, yy = em.eulersMethod(j)
-    em.findOrder(ee, j)
+    #em.findOrder(ee, j)
     j = j * 2

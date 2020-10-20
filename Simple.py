@@ -1,4 +1,3 @@
-y = 1
-
 def simple(t, y):
-    return (y * (-1))
+    y[0] = (y[0] * (-1))
+    return y

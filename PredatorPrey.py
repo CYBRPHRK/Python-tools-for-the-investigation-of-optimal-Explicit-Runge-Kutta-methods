@@ -1,13 +1,9 @@
-x = y = alpha = beta = gamma = delta = 0
+alpha = beta = gamma = delta = 0
 
-def setConstants(x0, y0, a, b, g, d):
-    global x, y, alpha, beta, gamma, delta
-    x, y, alpha, beta, gamma, delta = x0, y0, a, b, g, d
+def setConstants(a, b, g, d):
+    global alpha, beta, gamma, delta
+    alpha, beta, gamma, delta = a, b, g, d
 
-def predatorPreyForX(t, x):
-    global y, alpha, beta, gamma, delta
-    return ((alpha * x) - (beta * x * y))
-
-def predatorPreyForY(t, y):
-    global x, alpha, beta, gamma, delta
-    return ((delta * x * y) - (gamma * y))
+def predatorPrey(t, y):
+    global alpha, beta, gamma, delta
+    return (((alpha * y[0]) - (beta * y[0] * y[1])),((delta * y[0] * y[1]) - (gamma * y[1])))

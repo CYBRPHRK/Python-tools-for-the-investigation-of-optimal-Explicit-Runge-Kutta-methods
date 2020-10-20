@@ -3,63 +3,61 @@ import bokeh.plotting as bp
 import Simple as s
 import PredatorPrey as pp
 
-y0 = formulaNumber = eeOld = 0
+t0 = tf = formulaNumber = eeOld = 0
+y0 = []
 
 def displayFormulas():
-    print("Simple: f1 y0") 
-    print("Predator Prey for x: f2 x y alpha beta gamma delta")
-    print("Predator Prey for y: f3 x y alpha beta gamma delta")
+    print("Simple: f1 t tfinal y0") 
+    print("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
 
 def setFormulaValues(fname):
-    global formulaNumber, y0
+    #global formulaNumber, t0, tf, y0
     data = fname.split()
     for i in range(1, len(data)):
         data[i] = int(data[i])
         
     if (data[0] == "f1"):
         formulaNumber = 1
-        y0 = data[1]
+        y0.append(data[3])
     elif (data[0] == "f2"):
         formulaNumber = 2
-        y0 = data[1]
-        pp.setConstants(data[1], data[2], data[3], data[4], data[5], (data[6]))
-    elif (data[0] == "f3"):
-        formulaNumber = 3
-        y0 = data[2]
-        pp.setConstants(data[1], data[2], data[3], data[4], data[5], data[6])
+        y0.append(data[3])
+        y0.append(data[4])
+        pp.setConstants(data[5], (data[6], data[7], data[8]))
     else:
         print ("No formula with that name.")
         exit(0)
+    t0, tf = data[1], data[2]
         
 def formula(t, y):
     if (formulaNumber == 1):
         return s.simple(t, y)
     elif (formulaNumber == 2):
-        return pp.predatorPreyForX(t, y)
-    elif (formulaNumber == 3):
-        return pp.predatorPreyForY(t, y)
+        return pp.predatorPrey(t, y)
 
 def eulersMethod(steps):
-    global y0
-    t = 0
-    tfinal = 1
+    #global t0, tf, y0
+    t = t0
+    tfinal = tf
     y = y0
-    #i = 1
     h = (tfinal - t) / steps
     tt = [t]
     yy = [y]
     ee = []
     
     while (t < tfinal):
-        y = y + (h * formula(t, y))
+        for i in range(0, len(y)):
+            y[i] = y[i] + (h * formula(t, y))
+        #y = y + (h * formula(t, y))
         t = t + h
-        #t = i * h
-        #i = i + 1
         tt.append(t)
         yy.append(y)
         
     for j in range(0, len(yy)):
-        ee.append(yy[j] - math.exp((-1) * tt[j]))
+        e = []
+        for k in yy[j]:
+            e.append(k - math.exp((-1) * tt[j]))
+        ee.append(e)
     return ee, tt, yy
 
 def findOrder(ee, steps):
