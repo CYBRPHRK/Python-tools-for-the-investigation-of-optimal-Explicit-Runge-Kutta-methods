@@ -2,14 +2,14 @@ import math
 import bokeh.plotting as bp
 import Simple as s
 import PredatorPrey as pp
-import copy
 
 t0 = tf = formulaNumber = 0
 eeOld = y0 = []
 
 def displayFormulas():
-    print("Simple: f1 t tfinal y0") 
-    print("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
+    print ("Simple: f1 t tfinal y0") 
+    print ("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
+    print ("Simple for System: f3 t tfinal x y")
 
 def setFormulaValues(fname):
     global formulaNumber, t0, tf, y0
@@ -25,6 +25,10 @@ def setFormulaValues(fname):
         y0.append(data[3])
         y0.append(data[4])
         pp.setConstants(data[5], data[6], data[7], data[8])
+    elif (data[0] == "f3"):
+        formulaNumber = 3
+        y0.append(data[3])
+        y0.append(data[4])
     else:
         print ("No formula with that name.")
         exit(0)
@@ -35,33 +39,43 @@ def formula(t, y):
         return s.simple(t, y)
     elif (formulaNumber == 2):
         return pp.predatorPrey(t, y)
+    elif (formulaNumber == 3):
+        return s.simple_sys(t, y)
+
+def functionError(t, y):
+    if (formulaNumber == 1):
+        return [y[0] - math.exp((-1) * t)]
+    elif (formulaNumber == 2):
+        return [1, 1]
+    elif (formulaNumber == 3):
+        return [y[0] - math.sin(t), y[1] - math.cos(t)]
 
 def eulersMethod(steps):
     t = t0
     tfinal = tf
-    y = copy.deepcopy(y0)
-    h = (tfinal - t) / steps
+    y = y0[:]
+    #h = (tfinal - t)/steps
+    h = math.pow(2, (steps * (-1)))
     tt = [t]
-    yy = [copy.deepcopy(y)]
+    yy = [y[:]]
     ee = []
     
     while (t < tfinal):
-        fy = formula(t, y)
+        fy = formula(t, y[:])
         for i in range(0, len(y)):
             y[i] = y[i] + (h * fy[i])
         #y = y + (h * formula(t, y))
         t = t + h
         tt.append(t)
-        yy.append(copy.deepcopy(y))
+        yy.append(y[:])
         
     for j in range(0, len(yy)):
-        e = []
-        for k in yy[j]:
-            e.append(k - math.exp((-1) * tt[j]))
-        ee.append(copy.deepcopy(e))
-    print ("Start")
-    for e in ee:
-        print (e)
+        e = functionError(tt[j], yy[j])
+        '''
+        for k in range(0, len(yy[j]):
+            e.append(yy[j][k] - math.exp((-1) * tt[j]))
+        '''
+        ee.append(e[:])
     return ee, tt, yy
 
 def findOrder(ee, steps):
@@ -72,9 +86,7 @@ def findOrder(ee, steps):
             print ("ee[", i, "]: ", e, "\teeOld[", i, "]: ", eeOld[i],
                        "\tsteps: ", steps, "\teeOld/ee: ", eeOld[i]/e)
             i += 1
-        #print ("ee: " + str(ee[len(ee) - 1]) + "\teeOld: " + str(eeOld) +
-                   #"\tsteps: " + str(steps) + "\teeOld/ee: " + str(eeOld/ee[len(ee) - 1]))
-        print("\n")
+        print()
     eeOld = ee[len(ee) - 1]
 
 def plotGraph(index, ee, tt, yy):

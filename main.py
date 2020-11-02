@@ -5,7 +5,7 @@ fname = input("\nEnter the formula with values respectively (Use spaces between 
 em.setFormulaValues(fname)
 
 j = 1
-while(j <= 8):
+while(j <= 9):
     ee, tt, yy = em.eulersMethod(j)
     em.findOrder(ee, j)
-    j = j * 2
+    j = j + 1
