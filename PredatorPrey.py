@@ -1,5 +1,9 @@
 alpha = beta = gamma = delta = 0
-
+'''alpha = 2.0/3.0
+beta = 4.0/3.0
+gamma = 1
+delta = 1
+'''
 def setConstants(a, b, g, d):
     global alpha, beta, gamma, delta
     alpha, beta, gamma, delta = a, b, g, d

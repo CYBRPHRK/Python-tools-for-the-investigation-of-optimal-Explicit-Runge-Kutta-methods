@@ -1,54 +1,14 @@
 import math
 import bokeh.plotting as bp
-import Simple as s
-import PredatorPrey as pp
+import Methods as m
+import Function as f
 
-t0 = tf = formulaNumber = 0
+t0 = tf = 0
 eeOld = y0 = []
 
-def displayFormulas():
-    print ("Simple: f1 t tfinal y0") 
-    print ("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
-    print ("Simple for System: f3 t tfinal x y")
-
-def setFormulaValues(fname):
-    global formulaNumber, t0, tf, y0
-    data = fname.split()
-    for i in range(1, len(data)):
-        data[i] = float(data[i])
-        
-    if (data[0] == "f1"):
-        formulaNumber = 1
-        y0.append(data[3])
-    elif (data[0] == "f2"):
-        formulaNumber = 2
-        y0.append(data[3])
-        y0.append(data[4])
-        pp.setConstants(data[5], data[6], data[7], data[8])
-    elif (data[0] == "f3"):
-        formulaNumber = 3
-        y0.append(data[3])
-        y0.append(data[4])
-    else:
-        print ("No formula with that name.")
-        exit(0)
-    t0, tf = data[1], data[2]
-        
-def formula(t, y):
-    if (formulaNumber == 1):
-        return s.simple(t, y)
-    elif (formulaNumber == 2):
-        return pp.predatorPrey(t, y)
-    elif (formulaNumber == 3):
-        return s.simple_sys(t, y)
-
-def functionError(t, y):
-    if (formulaNumber == 1):
-        return [y[0] - math.exp((-1) * t)]
-    elif (formulaNumber == 2):
-        return [1, 1]
-    elif (formulaNumber == 3):
-        return [y[0] - math.sin(t), y[1] - math.cos(t)]
+def setInitialValues(t, tfinal, y):
+    global t0, tf, y0
+    t0, tf, y0 = t, tfinal, y[:]
 
 def eulersMethod(steps):
     t = t0
@@ -61,20 +21,16 @@ def eulersMethod(steps):
     ee = []
     
     while (t < tfinal):
-        fy = formula(t, y[:])
+        #fy = formula(t, y[:])
+        fy = m.method(t, y[:], h)
         for i in range(0, len(y)):
             y[i] = y[i] + (h * fy[i])
-        #y = y + (h * formula(t, y))
         t = t + h
         tt.append(t)
         yy.append(y[:])
-        
+    
     for j in range(0, len(yy)):
-        e = functionError(tt[j], yy[j])
-        '''
-        for k in range(0, len(yy[j]):
-            e.append(yy[j][k] - math.exp((-1) * tt[j]))
-        '''
+        e = f.functionError(tt[j], yy[j])
         ee.append(e[:])
     return ee, tt, yy
 
@@ -89,6 +45,7 @@ def findOrder(ee, steps):
         print()
     eeOld = ee[len(ee) - 1]
 
+#Depreciated
 def plotGraph(index, ee, tt, yy):
     bp.output_file("Plot" + str(index) + ".html")
 
