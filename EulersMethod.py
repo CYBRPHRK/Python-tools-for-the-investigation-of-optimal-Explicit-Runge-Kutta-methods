@@ -40,7 +40,7 @@ def findOrder(ee, steps):
     if (steps > 1):
         for e in ee[len(ee) -1]:
             print ("ee[", i, "]: ", e, "\teeOld[", i, "]: ", eeOld[i],
-                       "\tsteps: ", steps, "\teeOld/ee: ", eeOld[i]/e)
+                       "\tsteps: ", math.pow(2, (steps * (-1))), "\teeOld/ee: ", eeOld[i]/e)
             i += 1
         print()
     eeOld = ee[len(ee) - 1]
