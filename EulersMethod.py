@@ -39,8 +39,10 @@ def findOrder(ee, steps):
     i = 0
     if (steps > 1):
         for e in ee[len(ee) -1]:
-            print ("ee[", i, "]: ", e, "\teeOld[", i, "]: ", eeOld[i],
-                       "\tsteps: ", math.pow(2, (steps * (-1))), "\teeOld/ee: ", eeOld[i]/e)
+            ratio = eeOld[i]/e
+            print ("ee[" + str(i) + "]:", e, "\teeOld["+ str(i) +"]:", eeOld[i],
+                       "\tSteps:", math.pow(2, (steps * (-1))), "\teeOld/ee: ", ratio,
+                       "\tOrder:", round(math.log(ratio, 2)))
             i += 1
         print()
     eeOld = ee[len(ee) - 1]
