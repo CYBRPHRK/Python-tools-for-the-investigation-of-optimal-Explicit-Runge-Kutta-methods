@@ -3,28 +3,22 @@ import Function as f
 methodNumber = alpha = beta = case = 0
 
 def displayMethods():
-    print ("Forward Eulers Method: 1")
-    print ("Explicit Midpoint Method: 2")
-    print ("Heuns Second Order Method: 3")
-    print ("Second Order RK Method: 4 alpha")
-    print ("Heuns Third Order Method: 5")
-    print ("Ralston's Third Order Method: 6")
-    print ("Third Order RK Method: 7")
-    print ("RK4 Method: 8")
+    print ("1. Forward Eulers Method")
+    print ("2. Explicit Midpoint Method")
+    print ("3. Heuns Second Order Method")
+    print ("4. Second Order RK Method")
+    print ("5. Heuns Third Order Method")
+    print ("6. Ralston's Third Order Method")
+    print ("7. Third Order RK Method")
+    print ("8. RK4 Method")
 
 def setMethodValues(mname):
-    global methodNumber#, alpha
-    '''
-    data = mname.split()
-    for i in range(1, len(data)):
-        data[i] = float(data[i])
-    '''
+    global methodNumber
+    
     methodNumber = int(mname)
-    if ((methodNumber < 1) and (methodNumber > 8) and (methodNumber != 99)):
-        print ("No Method with that name.")
+    if ((methodNumber < 1) and (methodNumber > 8)):
+        print ("No Method with that number.")
         exit()
-    '''elif (methodNumber == 4):
-        alpha = data[1]'''
     
     chooseCase()
 
