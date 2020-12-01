@@ -11,6 +11,7 @@ def displayMethods():
     print ("6. Ralston's Third Order Method")
     print ("7. Third Order RK Method")
     print ("8. RK4 Method")
+    print ("9. FourthOrderRKMethod")
 
 def setMethodValues(mname):
     global methodNumber
@@ -28,17 +29,46 @@ def chooseCase():
         alpha = float(input("Enter the alpha: "))
     elif (methodNumber == 7):
         print ("Case 1: if c2≠0, 2/3, c3; c3≠0, c2, then enter: 1 c2 c3")
-        print ("Case 2: if b3≠0, then enter: 2 b3")
-        print ("Case 3: if b3≠0, then enter: 3 b3")
+        print ("Case 2: if b3≠0, where c3=0, then enter: 2 b3")
+        print ("Case 3: if b3≠0, where c3≠0, then enter: 3 b3")
         choice = input("\nEnter your case choice: ")
         data = choice.split()
         for i in range(1, len(data)):
-            data[i] = float(data[i])
+            if ("/" in str(data[i])):
+                res = data[i].split('/')
+                data[i] = int(res[0]) / int(res[1])
+            else:
+                data[i] = float(data[i])
         
         case = int(data[0]) 
         if (case == 1):
             alpha, beta = data[1], data[2]
         elif ((case == 2) or (case == 3)):
+            alpha = data[1]
+        else:
+            print ("No case of that choice.")
+            exit(0)
+    elif (methodNumber == 9):
+        print ("Case 1: 0, c2, c3, 1 all distinct,",
+               "\nc2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3")
+        print ("Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3")
+        print ("Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3")
+        print ("Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4")
+        print ("Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2")
+        choice = input("\nEnter your case choice: ")
+        data = choice.split()
+        for i in range(1, len(data)):
+            if ("/" in str(data[i])):
+                res = data[i].split('/')
+                data[i] = int(res[0]) / int(res[1])
+            else:
+                data[i] = float(data[i])
+            
+        
+        case = int(data[0]) 
+        if (case == 1):
+            alpha, beta = data[1], data[2]
+        elif ((case == 2) or (case == 3) or (case == 4) or (case == 5)):
             alpha = data[1]
         else:
             print ("No case of that choice.")
@@ -61,6 +91,8 @@ def method(t, y, h):
         return thirdOrderRKMethod(t, y, h)
     elif (methodNumber == 8):
         return RK4Method(t, y, h)
+    elif (methodNumber == 9):
+        return FourthOrderRKMethod(t, y, h)
 
 def forwardEulersMethod(t, y):
     fy = f.formula(t, y[:])
@@ -163,7 +195,7 @@ def thirdOrderRKMethod(t, y, h):
         b1 = (2 - (3 * (c2 + c3)) + (6 * c2 * c3)) / (6 * c2 * c3)
         b2 = (c3 - (2/3)) / (2 * c2 * (c3 - c2))
         b3 = ((2/3) - c2) / (2 * c3 * (c3 - c2))
-        a31 = (c3 * ((c3 * 3 * c2) + (3 * c2 * c2))) / (c2 * ((3 * c2) - 2))
+        a31 = (c3 * (c3 - (3 * c2) + (3 * c2 * c2))) / (c2 * ((3 * c2) - 2))
         a32 = (c3 * (c2 - c3)) / (c2 * ((3 * c2) - 2))
     elif (case == 2):
         c2 = 2/3
@@ -224,5 +256,110 @@ def RK4Method(t, y, h):
     fy = []
     for i in range (0, len(y)):
         fy.append((1/6) * (k1[i] + (2 * k2[i]) + (2 * k3[i]) + k4[i]))
+
+    return fy
+
+def FourthOrderRKMethod(t, y, h):
+    #Here, alpha is used for c2, b3 or b4 and beta for c3
+    global alpha, beta
+
+    if (case == 1):
+        c2 = alpha
+        c3 = beta
+        c4 = 1
+        a31 = (c3 * ((3 * c2) - c3 - (4 * c2 * c2))) / (2 * c2 * (1 - (2 * c2)))
+        a32 = (c3 * (c3 - c2)) / (2 * c2 * (1 - (2 * c2)))
+        a41 = (((c3 ** 2) * ((12 * c2 * c2) - (12 * c2) + 4)) - (c3 * ((12 * c2 * c2) - (15 * c2) + 5)) + ((4 * c2 * c2) - (6 * c2) + 2)) / ((2 * c2 * c3) * (3 - (4 * (c2 + c3)) + (6 * c2 * c3)))
+        a42 = (((-4 * c3 * c3) + (5 * c3) + c2 - 2) * (1 - c2)) / ((2 * c2) * (c3 - c2) * (3 - (4 * (c2 + c3)) + (6 * c2 * c3)))
+        a43 = ((1 - (2 * c2)) * (1 - c3) * (1 - c2)) / (c3 * (c3 - c2) * (3 - (4 * (c2 + c3)) + (6 * c2 * c3)))
+        b1 = (1 - (2 * (c2 + c3)) + (6 * c2 * c3)) / (12 * c2 * c3)
+        b2 = ((2 * c3) - 1) / ((12 * c2) * (c3 - c2) * (1 - c2))
+        b3 = (1 - (2 * c2)) / ((12 * c3) * (c3 - c2) * (1 - c3))
+        b4 = (3 - (4 * (c2 + c3)) + (6 * c2 * c3)) / (12 * (1 - c2) * (1 - c3))
+    elif (case == 2):
+        b3 = alpha
+        c2 = c3 = 1/2
+        c4 = 1
+        a31 = ((3 * b3) - 1) / (6 * b3)
+        a32 = 1 / (6 * b3)
+        a41 = 0
+        a42 = 1 - (3 * b3)
+        a43 = 3 * b3
+        b1 = 1/6
+        b2 = (2 / 3) - b3
+        b4 = 1/6
+    elif (case == 3):
+        b3 = alpha
+        c2 = 1/2
+        c3 = 0
+        c4 = 1
+        a31 = -1 / (12 * b3)
+        a32 = 1 / (12 * b3)
+        a41 = (-1/2) - (6 * b3)
+        a42 = 3/2
+        a43 = 6 * b3
+        b1 = (1/6) - b3
+        b2 = 2/3
+        b4 = 1/6
+    elif (case == 4):
+        b4 = alpha
+        c2 = 1
+        c3 = 1/2
+        c4 = 1
+        a31 = 3/8
+        a32 = 1/8
+        a41 = 1 - (1 / (4 * b4))
+        a42 = -1 / (12 * b4)
+        a43 = 1 / (3 * b4)
+        b1 = 1/6
+        b2 = 1/6 - b4
+        b3 = 2/3
+    elif (case == 5):
+        c2 = alpha
+        c3 = 1/2
+        c4 = 1
+        a31 = ((4 * c2) - 1) / (8 * c2)
+        a32 = 1 / (8 * c2)
+        a41 = (1 - (2 * c2)) / (2 * c2)
+        a42 = -1 / (2 * c2)
+        a43 = 2
+        b1 = 1/6
+        b2 = 0
+        b3 = 2/3
+        b4 = 1/6
+
+    '''print ("\nc2 =", c2)
+    print ("c3 =", c3)
+    print ("c4 =", c4)
+    print ("b1 =", b1)
+    print ("b2 =", b2)
+    print ("b3 =", b3)
+    print ("b4 =", b4)
+    print ("a31 =", a31)
+    print ("a32 =", a32)
+    print ("a41 =", a41)
+    print ("a42 =", a42)
+    print ("a43 =", a43)'''
+
+    k1 = f.formula(t, y[:])
+    
+    yn = []
+    for i in range (0, len(k1)):
+        yn.append(y[i] + (h * (c2 * k1[i])))
+    k2 = f.formula((t + (c2 * h)), yn[:])
+
+    yn.clear()
+    for i in range (0, len(k2)):
+        yn.append(y[i] + (h * ((a31 * k1[i]) + (a32 * k2[i]))))
+    k3 = f.formula((t + (c3 * h)), yn[:])
+
+    yn.clear()
+    for i in range (0, len(k3)):
+        yn.append(y[i] + (h * ((a41 * k1[i]) + (a42 * k2[i]) + (a43 * k3[i]))))
+    k4 = f.formula((t + (c4 * h)), yn[:])
+
+    fy = []
+    for i in range (0, len(y)):
+        fy.append((b1 * k1[i]) + (b2 * k2[i]) + (b3 * k3[i]) + (b4 * k4[i]))
 
     return fy

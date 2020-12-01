@@ -30,7 +30,7 @@ def eulersMethod(steps):
         yy.append(y[:])
     
     for j in range(0, len(yy)):
-        e = f.functionError(tt[j], yy[j])
+        e = f.formulaExact(tt[j], yy[j])
         ee.append(e[:])
     return ee, tt, yy
 
