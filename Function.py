@@ -7,13 +7,13 @@ def displayFormulas():
     print ("Simple: f1 t tfinal y0")
     print ("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
     print ("Simple for System: f3 t tfinal x y")
-    print ("Test F1: f4 t tfinal y0")
-    print ("Test F2: f5 t tfinal y0")
-    print ("Test F3: f6 t tfinal y0")
-    print ("Test F4: f7 t tfinal y0")
-    print ("Test F5: f8 t tfinal y0")
-    print ("Test F6: f9 t tfinal y0")
-    print ("Test F7: f10 t tfinal y0 alpha")
+    print ("Test F4: f4 t tfinal y0")
+    print ("Test F5: f5 t tfinal y0")
+    print ("Test F6: f6 t tfinal y0")
+    print ("Test F7: f7 t tfinal y0")
+    print ("Test F8: f8 t tfinal y0")
+    print ("Test F9: f9 t tfinal y0")
+    print ("Test F10: f10 t tfinal y0 alpha")
 
 '''
 Name: setFormulaValues
@@ -77,19 +77,19 @@ def formula(t, y):
     elif (formulaNumber == 3):
         return s.simple_sys(0, t, y)
     elif (formulaNumber == 4):
-        return s.TestF1(0, t, y)
-    elif (formulaNumber == 5):
-        return s.TestF2(0, t, y)
-    elif (formulaNumber == 6):
-        return s.TestF3(0, t, y)
-    elif (formulaNumber == 7):
         return s.TestF4(0, t, y)
-    elif (formulaNumber == 8):
+    elif (formulaNumber == 5):
         return s.TestF5(0, t, y)
-    elif (formulaNumber == 9):
+    elif (formulaNumber == 6):
         return s.TestF6(0, t, y)
-    elif (formulaNumber == 10):
+    elif (formulaNumber == 7):
         return s.TestF7(0, t, y)
+    elif (formulaNumber == 8):
+        return s.TestF8(0, t, y)
+    elif (formulaNumber == 9):
+        return s.TestF9(0, t, y)
+    elif (formulaNumber == 10):
+        return s.TestF10(0, t, y)
 
 '''
 Name: formulaExact
@@ -112,16 +112,16 @@ def formulaExact(t, y):
     elif (formulaNumber == 3):
         return s.simple_sys(1, t, y)
     elif (formulaNumber == 4):
-        return s.TestF1(1, t, y)
-    elif (formulaNumber == 5):
-        return s.TestF2(1, t, y)
-    elif (formulaNumber == 6):
-        return s.TestF3(1, t, y)
-    elif (formulaNumber == 7):
         return s.TestF4(1, t, y)
-    elif (formulaNumber == 8):
+    elif (formulaNumber == 5):
         return s.TestF5(1, t, y)
-    elif (formulaNumber == 9):
+    elif (formulaNumber == 6):
         return s.TestF6(1, t, y)
-    elif (formulaNumber == 10):
+    elif (formulaNumber == 7):
         return s.TestF7(1, t, y)
+    elif (formulaNumber == 8):
+        return s.TestF8(1, t, y)
+    elif (formulaNumber == 9):
+        return s.TestF9(1, t, y)
+    elif (formulaNumber == 10):
+        return s.TestF10(1, t, y)
