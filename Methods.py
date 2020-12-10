@@ -26,7 +26,12 @@ def setMethodValues(mname):
 def chooseCase():
     global alpha, beta, case
     if (methodNumber == 4):
-        alpha = float(input("Enter the alpha: "))
+        alpha = input("Enter the alpha: ")
+        if ("/" in str(alpha)):
+            res = alpha.split('/')
+            alpha = int(res[0]) / int(res[1])
+        else:
+            alpha = float(alpha)
     elif (methodNumber == 7):
         print ("Case 1: if c2≠0, 2/3, c3; c3≠0, c2, then enter: 1 c2 c3")
         print ("Case 2: if b3≠0, where c3=0, then enter: 2 b3")

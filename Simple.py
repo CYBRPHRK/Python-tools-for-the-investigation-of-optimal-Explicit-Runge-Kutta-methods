@@ -40,7 +40,7 @@ def TestF7(i, t, y):
     if (i == 0):
         return [100 * (math.sin(t) - y[0])]
     else:
-        return [y[0] - ((100 * (math.exp(-100 * t) - math.cos(t) + (10000 * math.sin(t)))) * (10001))]
+        return [y[0] - ((100 * (math.exp(-100 * t) - math.cos(t)) + (10000 * math.sin(t))) / (10001))]
 
 def TestF8(i, t, y):
     if (i == 0):

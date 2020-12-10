@@ -1,0 +1,657 @@
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+1
+ee[0]: 0.008356094360351562	eeOld[0]: 0.0	Steps: 0.25	eeOld/ee:  0.0	Order: n/a
+
+ee[0]: 0.0045486124686073826	eeOld[0]: 0.008356094360351562	Steps: 0.125	eeOld/ee:  1.83706447142328	Order: 1
+
+ee[0]: 0.0022642864188356926	eeOld[0]: 0.0045486124686073826	Steps: 0.0625	eeOld/ee:  2.0088503074387125	Order: 1
+
+ee[0]: 0.0011213922644928154	eeOld[0]: 0.0022642864188356926	Steps: 0.03125	eeOld/ee:  2.0191742805179653	Order: 1
+
+ee[0]: 0.0005571541057450835	eeOld[0]: 0.0011213922644928154	Steps: 0.015625	eeOld/ee:  2.012714710220388	Order: 1
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+2
+ee[0]: -0.0034611453144565707	eeOld[0]: -0.02850341796875	Steps: 0.25	eeOld/ee:  8.235256072519244	Order: 3
+
+ee[0]: -0.0006049838698305443	eeOld[0]: -0.0034611453144565707	Steps: 0.125	eeOld/ee:  5.721053877727411	Order: 3
+
+ee[0]: -0.00012859186109925869	eeOld[0]: -0.0006049838698305443	Steps: 0.0625	eeOld/ee:  4.7046824321452485	Order: 2
+
+ee[0]: -2.98102712548709e-05	eeOld[0]: -0.00012859186109925869	Steps: 0.03125	eeOld/ee:  4.313676316455765	Order: 2
+
+ee[0]: -7.1877677595422185e-06	eeOld[0]: -2.98102712548709e-05	Steps: 0.015625	eeOld/ee:  4.147361496939835	Order: 2
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+3
+ee[0]: 0.0048106255815345556	eeOld[0]: -0.00048828125	Steps: 0.25	eeOld/ee:  -0.10150057237342544	Order: n/a
+
+ee[0]: 0.001409388944201062	eeOld[0]: 0.0048106255815345556	Steps: 0.125	eeOld/ee:  3.4132704114984715	Order: 2
+
+ee[0]: 0.00036692452513609197	eeOld[0]: 0.001409388944201062	Steps: 0.0625	eeOld/ee:  3.841086783932802	Order: 2
+
+ee[0]: 9.31249352308372e-05	eeOld[0]: 0.00036692452513609197	Steps: 0.03125	eeOld/ee:  3.9401318693705716	Order: 2
+
+ee[0]: 2.3435126683901686e-05	eeOld[0]: 9.31249352308372e-05	Steps: 0.015625	eeOld/ee:  3.973732955956564	Order: 2
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+4
+Enter the alpha: 0.8
+ee[0]: 0.0016403494861345624	eeOld[0]: -0.010507812499999991	Steps: 0.25	eeOld/ee:  -6.4058376515612885	Order: n/a
+
+ee[0]: 0.0006202265114554351	eeOld[0]: 0.0016403494861345624	Steps: 0.125	eeOld/ee:  2.644758738682885	Order: 1
+
+ee[0]: 0.0001707853126673431	eeOld[0]: 0.0006202265114554351	Steps: 0.0625	eeOld/ee:  3.6316150479726375	Order: 2
+
+ee[0]: 4.421023806255864e-05	eeOld[0]: 0.0001707853126673431	Steps: 0.03125	eeOld/ee:  3.8630263068404522	Order: 2
+
+ee[0]: 1.1218496211107265e-05	eeOld[0]: 4.421023806255864e-05	Steps: 0.015625	eeOld/ee:  3.9408346030180716	Order: 2
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+5
+ee[0]: 0.00037403055413620656	eeOld[0]: 0.0061027891336281614	Steps: 0.25	eeOld/ee:  16.316285036451262	Order: 4
+
+ee[0]: 3.099835966935416e-05	eeOld[0]: 0.00037403055413620656	Steps: 0.125	eeOld/ee:  12.066140212766921	Order: 4
+
+ee[0]: 3.100553266688344e-06	eeOld[0]: 3.099835966935416e-05	Steps: 0.0625	eeOld/ee:  9.997686542719215	Order: 3
+
+ee[0]: 3.448932635041757e-07	eeOld[0]: 3.100553266688344e-06	Steps: 0.03125	eeOld/ee:  8.98989222110685	Order: 3
+
+ee[0]: 4.0609599349927805e-08	eeOld[0]: 3.448932635041757e-07	Steps: 0.015625	eeOld/ee:  8.492899930685695	Order: 3
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+6
+ee[0]: 4.269858189664966e-05	eeOld[0]: 0.002819773919857216	Steps: 0.25	eeOld/ee:  66.03905316299203	Order: 6
+
+ee[0]: -5.114750535051282e-06	eeOld[0]: 4.269858189664966e-05	Steps: 0.125	eeOld/ee:  -8.348125994422825	Order: n/a
+
+ee[0]: -1.0891459933937142e-06	eeOld[0]: -5.114750535051282e-06	Steps: 0.0625	eeOld/ee:  4.696111050378126	Order: 2
+
+ee[0]: -1.5895665295140304e-07	eeOld[0]: -1.0891459933937142e-06	Steps: 0.03125	eeOld/ee:  6.851842770787914	Order: 3
+
+ee[0]: -2.1146274509220575e-08	eeOld[0]: -1.5895665295140304e-07	Steps: 0.015625	eeOld/ee:  7.517005082010637	Order: 3
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+7
+Case 1: if c2≠0, 2/3, c3; c3≠0, c2, then enter: 1 c2 c3
+Case 2: if b3≠0, where c3=0, then enter: 2 b3
+Case 3: if b3≠0, where c3≠0, then enter: 3 b3
+
+Enter your case choice: 1 1/3 2/3
+ee[0]: 0.00037403055413620656	eeOld[0]: 0.0061027891336281614	Steps: 0.25	eeOld/ee:  16.316285036451262	Order: 4
+
+ee[0]: 3.099835966935416e-05	eeOld[0]: 0.00037403055413620656	Steps: 0.125	eeOld/ee:  12.066140212766921	Order: 4
+
+ee[0]: 3.100553266688344e-06	eeOld[0]: 3.099835966935416e-05	Steps: 0.0625	eeOld/ee:  9.997686542719215	Order: 3
+
+ee[0]: 3.448932635041757e-07	eeOld[0]: 3.100553266688344e-06	Steps: 0.03125	eeOld/ee:  8.98989222110685	Order: 3
+
+ee[0]: 4.060959946095011e-08	eeOld[0]: 3.448932635041757e-07	Steps: 0.015625	eeOld/ee:  8.492899907467015	Order: 3
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+7
+Case 1: if c2≠0, 2/3, c3; c3≠0, c2, then enter: 1 c2 c3
+Case 2: if b3≠0, where c3=0, then enter: 2 b3
+Case 3: if b3≠0, where c3≠0, then enter: 3 b3
+
+Enter your case choice: 2 1/4
+ee[0]: -0.0019993427208122583	eeOld[0]: -0.021400928497314453	Steps: 0.25	eeOld/ee:  10.703982000954822	Order: 3
+
+ee[0]: -0.00021791756307942833	eeOld[0]: -0.0019993427208122583	Steps: 0.125	eeOld/ee:  9.174766331631204	Order: 3
+
+ee[0]: -2.54076833568484e-05	eeOld[0]: -0.00021791756307942833	Steps: 0.0625	eeOld/ee:  8.576837172393788	Order: 3
+
+ee[0]: -3.0668742777573144e-06	eeOld[0]: -2.54076833568484e-05	Steps: 0.03125	eeOld/ee:  8.28455327990427	Order: 3
+
+ee[0]: -3.767093658124665e-07	eeOld[0]: -3.0668742777573144e-06	Steps: 0.015625	eeOld/ee:  8.141221206812432	Order: 3
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+7
+Case 1: if c2≠0, 2/3, c3; c3≠0, c2, then enter: 1 c2 c3
+Case 2: if b3≠0, where c3=0, then enter: 2 b3
+Case 3: if b3≠0, where c3≠0, then enter: 3 b3
+
+Enter your case choice: 3 3/4
+ee[0]: -0.0005059609936951537	eeOld[0]: -0.0023980071392648017	Steps: 0.25	eeOld/ee:  4.739509901250656	Order: 2
+
+ee[0]: -6.655558132795392e-05	eeOld[0]: -0.0005059609936951537	Steps: 0.125	eeOld/ee:  7.6020821034079935	Order: 3
+
+ee[0]: -8.315824882476619e-06	eeOld[0]: -6.655558132795392e-05	Steps: 0.0625	eeOld/ee:  8.003485194619964	Order: 3
+
+ee[0]: -1.034124730903141e-06	eeOld[0]: -8.315824882476619e-06	Steps: 0.03125	eeOld/ee:  8.04141380045528	Order: 3
+
+ee[0]: -1.2879246158448154e-07	eeOld[0]: -1.034124730903141e-06	Steps: 0.015625	eeOld/ee:  8.02938866282019	Order: 3
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+8
+ee[0]: 1.3552536916594526e-05	eeOld[0]: -0.00029847713504416173	Steps: 0.25	eeOld/ee:  -22.023709426586304	Order: n/a
+
+ee[0]: 1.3925516484381006e-06	eeOld[0]: 1.3552536916594526e-05	Steps: 0.125	eeOld/ee:  9.732161052550678	Order: 3
+
+ee[0]: 9.811778567403451e-08	eeOld[0]: 1.3925516484381006e-06	Steps: 0.0625	eeOld/ee:  14.192652625329476	Order: 4
+
+ee[0]: 6.400841079390318e-09	eeOld[0]: 9.811778567403451e-08	Steps: 0.03125	eeOld/ee:  15.328889509529935	Order: 4
+
+ee[0]: 4.0733605377596405e-10	eeOld[0]: 6.400841079390318e-09	Steps: 0.015625	eeOld/ee:  15.713907521946973	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 1 1/3 2/3
+ee[0]: -6.424795681758688e-05	eeOld[0]: -0.0021540720654728007	Steps: 0.25	eeOld/ee:  33.527479661161095	Order: 5
+
+ee[0]: -2.632468339369698e-06	eeOld[0]: -6.424795681758688e-05	Steps: 0.125	eeOld/ee:  24.40597512863916	Order: 5
+
+ee[0]: -1.3228658479746969e-07	eeOld[0]: -2.632468339369698e-06	Steps: 0.0625	eeOld/ee:  19.899737705074163	Order: 4
+
+ee[0]: -7.4025114371600864e-09	eeOld[0]: -1.3228658479746969e-07	Steps: 0.03125	eeOld/ee:  17.87050056193096	Order: 4
+
+ee[0]: -4.376444207032648e-10	eeOld[0]: -7.4025114371600864e-09	Steps: 0.015625	eeOld/ee:  16.914442609058636	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 2 1/3
+ee[0]: 1.3552536916594526e-05	eeOld[0]: -0.00029847713504416173	Steps: 0.25	eeOld/ee:  -22.023709426586304	Order: n/a
+
+ee[0]: 1.3925516484381006e-06	eeOld[0]: 1.3552536916594526e-05	Steps: 0.125	eeOld/ee:  9.732161052550678	Order: 3
+
+ee[0]: 9.811778567403451e-08	eeOld[0]: 1.3925516484381006e-06	Steps: 0.0625	eeOld/ee:  14.192652625329476	Order: 4
+
+ee[0]: 6.400841079390318e-09	eeOld[0]: 9.811778567403451e-08	Steps: 0.03125	eeOld/ee:  15.328889509529935	Order: 4
+
+ee[0]: 4.0733605377596405e-10	eeOld[0]: 6.400841079390318e-09	Steps: 0.015625	eeOld/ee:  15.713907521946973	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 2 1/6
+ee[0]: -4.054892453420056e-06	eeOld[0]: -0.0006102077214765189	Steps: 0.25	eeOld/ee:  150.4867831850499	Order: 7
+
+ee[0]: 4.1281955254213187e-07	eeOld[0]: -4.054892453420056e-06	Steps: 0.125	eeOld/ee:  -9.822433139249668	Order: n/a
+
+ee[0]: 4.098966632781753e-08	eeOld[0]: 4.1281955254213187e-07	Steps: 0.0625	eeOld/ee:  10.071307954560561	Order: 3
+
+ee[0]: 2.960039768851175e-09	eeOld[0]: 4.098966632781753e-08	Steps: 0.03125	eeOld/ee:  13.84767419652814	Order: 4
+
+ee[0]: 1.9633628056681118e-10	eeOld[0]: 2.960039768851175e-09	Steps: 0.015625	eeOld/ee:  15.076376919771098	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 3 1/6
+ee[0]: 4.490736618090185e-05	eeOld[0]: 0.0006353193950802138	Steps: 0.25	eeOld/ee:  14.147331476108738	Order: 4
+
+ee[0]: 2.2741136791459837e-06	eeOld[0]: 4.490736618090185e-05	Steps: 0.125	eeOld/ee:  19.747194958946064	Order: 4
+
+ee[0]: 1.2391900683361712e-07	eeOld[0]: 2.2741136791459837e-06	Steps: 0.0625	eeOld/ee:  18.351613180691306	Order: 4
+
+ee[0]: 7.179076999541678e-09	eeOld[0]: 1.2391900683361712e-07	Steps: 0.03125	eeOld/ee:  17.261133547046267	Order: 4
+
+ee[0]: 4.312138424111822e-10	eeOld[0]: 7.179076999541678e-09	Steps: 0.015625	eeOld/ee:  16.64853094557224	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 4 1/6
+ee[0]: 0.0001996516925797387	eeOld[0]: 0.002005472778937145	Steps: 0.25	eeOld/ee:  10.04485738650165	Order: 3
+
+ee[0]: 1.3109776005215679e-05	eeOld[0]: 0.0001996516925797387	Steps: 0.125	eeOld/ee:  15.22922226133444	Order: 4
+
+ee[0]: 8.239938564802429e-07	eeOld[0]: 1.3109776005215679e-05	Steps: 0.0625	eeOld/ee:  15.910040957362423	Order: 4
+
+ee[0]: 5.1463879047197736e-08	eeOld[0]: 8.239938564802429e-07	Steps: 0.03125	eeOld/ee:  16.011110544631794	Order: 4
+
+ee[0]: 3.2129358062960023e-09	eeOld[0]: 5.1463879047197736e-08	Steps: 0.015625	eeOld/ee:  16.01771157280833	Order: 4
+
+>>> 
+=========================== RESTART ==========================
+Simple: f1 t tfinal y0
+Predator Prey: f2 t tfinal x y alpha beta gamma delta
+Simple for System: f3 t tfinal x y
+Test F4: f4 t tfinal y0
+Test F5: f5 t tfinal y0
+Test F6: f6 t tfinal y0
+Test F7: f7 t tfinal y0
+Test F8: f8 t tfinal y0
+Test F9: f9 t tfinal y0
+Test F10: f10 t tfinal y0 alpha
+
+Enter the formula with values respectively (Use spaces between the values like shown above):
+f5 0 1 1
+1. Forward Eulers Method
+2. Explicit Midpoint Method
+3. Heuns Second Order Method
+4. Second Order RK Method
+5. Heuns Third Order Method
+6. Ralston's Third Order Method
+7. Third Order RK Method
+8. RK4 Method
+9. FourthOrderRKMethod
+
+Enter the method with values respectively (Use spaces between the values like shown above):
+9
+Case 1: 0, c2, c3, 1 all distinct, 
+c2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0, then enter: 1 c2 c3
+Case 2: c2 = c3 = 1/2, b3≠0, then enter: 2 b3
+Case 3: c2 = 1/2, c3 = 0, b3≠0, then enter: 3 b3
+Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
+Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
+
+Enter your case choice: 5 1
+ee[0]: 0.0001996516925797387	eeOld[0]: 0.002005472778937145	Steps: 0.25	eeOld/ee:  10.04485738650165	Order: 3
+
+ee[0]: 1.3109776005215679e-05	eeOld[0]: 0.0001996516925797387	Steps: 0.125	eeOld/ee:  15.22922226133444	Order: 4
+
+ee[0]: 8.239938564802429e-07	eeOld[0]: 1.3109776005215679e-05	Steps: 0.0625	eeOld/ee:  15.910040957362423	Order: 4
+
+ee[0]: 5.1463879047197736e-08	eeOld[0]: 8.239938564802429e-07	Steps: 0.03125	eeOld/ee:  16.011110544631794	Order: 4
+
+ee[0]: 3.2129358062960023e-09	eeOld[0]: 5.1463879047197736e-08	Steps: 0.015625	eeOld/ee:  16.01771157280833	Order: 4
+
+>>> 
