@@ -50,12 +50,6 @@ def TestF8(i, t, y):
 
 def TestF9(i, t, y):
     if (i == 0):
-        return [(-1 * y[0]) / (t + 1)]
-    else:
-        return [y[0] - (1 / (t + 1))]
-
-def TestF10(i, t, y):
-    if (i == 0):
         return [(-1 * alpha * y[0]) - (math.exp(-1 * alpha * t) * math.sin(t))]
     else:
         return [y[0] - (math.exp(-1 * alpha * t) * math.cos(t))]

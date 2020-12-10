@@ -12,8 +12,7 @@ def displayFormulas():
     print ("Test F6: f6 t tfinal y0")
     print ("Test F7: f7 t tfinal y0")
     print ("Test F8: f8 t tfinal y0")
-    print ("Test F9: f9 t tfinal y0")
-    print ("Test F10: f10 t tfinal y0 alpha")
+    print ("Test F9: f9 t tfinal y0 alpha")
 
 '''
 Name: setFormulaValues
@@ -45,10 +44,10 @@ def setFormulaValues(fname):
     elif (formulaNumber == 3):
         y0.append(data[3])
         y0.append(data[4])
-    elif (formulaNumber == 10):
+    elif (formulaNumber == 9):
         y0.append(data[3])
         s.setAlpha(data[4])
-    elif ((formulaNumber == 1) or ((formulaNumber >= 4) and (formulaNumber <= 9))):
+    elif ((formulaNumber == 1) or ((formulaNumber >= 4) and (formulaNumber <= 8))):
         y0.append(data[3])
     else:
         print ("No formula with that name.")
@@ -88,8 +87,6 @@ def formula(t, y):
         return s.TestF8(0, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(0, t, y)
-    elif (formulaNumber == 10):
-        return s.TestF10(0, t, y)
 
 '''
 Name: formulaExact
@@ -123,5 +120,3 @@ def formulaExact(t, y):
         return s.TestF8(1, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(1, t, y)
-    elif (formulaNumber == 10):
-        return s.TestF10(1, t, y)
