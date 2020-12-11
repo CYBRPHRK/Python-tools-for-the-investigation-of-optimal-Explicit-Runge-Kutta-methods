@@ -31,6 +31,10 @@ def eulersMethod(steps):
     
     for j in range(0, len(yy)):
         e = f.formulaExact(tt[j], yy[j])
+        for i in range (0, len(e)):
+            #print ("In")
+            e[i] = abs(e[i])
+        #print (e)
         ee.append(e[:])
     return ee, tt, yy
 
@@ -44,7 +48,7 @@ def findOrder(ee, steps):
             print ("\teeOld["+ str(i) +"]:", eeOld[i], end='')
             print ("\tSteps:", math.pow(2, (steps * (-1))), end='')
             print ("\teeOld/ee: ", ratio, end='')
-            if (ratio <= 0):
+            if (ratio == 0):
                 print ("\tOrder: n/a")
             else:
                 print ("\tOrder:", round(math.log(ratio, 2)))

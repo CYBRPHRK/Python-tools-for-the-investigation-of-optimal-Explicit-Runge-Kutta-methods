@@ -8,8 +8,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -25,15 +24,15 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 1
-ee[0]: -0.02626646522753462 	eeOld[0]: -0.06257553118654746 	Steps: 0.25 	eeOld/ee:  2.3823354472892975 	Order: 1
+ee[0]: 0.02626646522753462		eeOld[0]: 0.06257553118654746	Steps: 0.25		eeOld/ee:  2.3823354472892975	Order: 1
 
-ee[0]: -0.01223672651917207 	eeOld[0]: -0.02626646522753462 	Steps: 0.125 	eeOld/ee:  2.1465271113464253 	Order: 1
+ee[0]: 0.01223672651917207		eeOld[0]: 0.02626646522753462	Steps: 0.125	eeOld/ee:  2.1465271113464253	Order: 1
 
-ee[0]: -0.00592325709702568 	eeOld[0]: -0.01223672651917207 	Steps: 0.0625 	eeOld/ee:  2.065877999001031 	Order: 1
+ee[0]: 0.00592325709702568		eeOld[0]: 0.01223672651917207	Steps: 0.0625	eeOld/ee:  2.065877999001031	Order: 1
 
-ee[0]: -0.002915839615100446 	eeOld[0]: -0.00592325709702568 	Steps: 0.03125 	eeOld/ee:  2.031407031563234 	Order: 1
+ee[0]: 0.002915839615100446		eeOld[0]: 0.00592325709702568	Steps: 0.03125	eeOld/ee:  2.031407031563234	Order: 1
 
-ee[0]: -0.0014468140312611233 	eeOld[0]: -0.002915839615100446 	Steps: 0.015625 	eeOld/ee:  2.015352043938113 	Order: 1
+ee[0]: 0.0014468140312611233	eeOld[0]: 0.002915839615100446	Steps: 0.015625	eeOld/ee:  2.015352043938113	Order: 1
 
 >>> 
 =========================== RESTART ==========================
@@ -45,8 +44,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -62,15 +60,15 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 2
-ee[0]: 0.0030849229590949045 	eeOld[0]: 0.015498289079444838 	Steps: 0.25 	eeOld/ee:  5.02388204987522 	Order: 2
+ee[0]: 0.0030849229590949045	eeOld[0]: 0.015498289079444838		Steps: 0.25		eeOld/ee:  5.02388204987522		Order: 2
 
-ee[0]: 0.0006825361948119557 	eeOld[0]: 0.0030849229590949045 	Steps: 0.125 	eeOld/ee:  4.519793942861632 	Order: 2
+ee[0]: 0.0006825361948119557	eeOld[0]: 0.0030849229590949045		Steps: 0.125	eeOld/ee:  4.519793942861632	Order: 2
 
-ee[0]: 0.00016050230602793203 	eeOld[0]: 0.0006825361948119557 	Steps: 0.0625 	eeOld/ee:  4.252500862468448 	Order: 2
+ee[0]: 0.00016050230602793203	eeOld[0]: 0.0006825361948119557		Steps: 0.0625	eeOld/ee:  4.252500862468448	Order: 2
 
-ee[0]: 3.89230471622426e-05 	eeOld[0]: 0.00016050230602793203 	Steps: 0.03125 	eeOld/ee:  4.123580185254039 	Order: 2
+ee[0]: 3.89230471622426e-05		eeOld[0]: 0.00016050230602793203	Steps: 0.03125	eeOld/ee:  4.123580185254039	Order: 2
 
-ee[0]: 9.584482730473631e-06 	eeOld[0]: 3.89230471622426e-05 	Steps: 0.015625 	eeOld/ee:  4.061048285734577 	Order: 2
+ee[0]: 9.584482730473631e-06	eeOld[0]: 3.89230471622426e-05		Steps: 0.015625	eeOld/ee:  4.061048285734577	Order: 2
 
 >>> 
 =========================== RESTART ==========================
@@ -82,8 +80,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -99,15 +96,15 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 3
-ee[0]: 0.0014863516641775432 	eeOld[0]: 0.005789852606892576 	Steps: 0.25 	eeOld/ee:  3.8953450562430185 	Order: 2
+ee[0]: 0.0014863516641775432	eeOld[0]: 0.005789852606892576		Steps: 0.25		eeOld/ee:  3.8953450562430185	Order: 2
 
-ee[0]: 0.00036145292696287967 	eeOld[0]: 0.0014863516641775432 	Steps: 0.125 	eeOld/ee:  4.112158329071127 	Order: 2
+ee[0]: 0.00036145292696287967	eeOld[0]: 0.0014863516641775432		Steps: 0.125	eeOld/ee:  4.112158329071127	Order: 2
 
-ee[0]: 8.848120043258856e-05 	eeOld[0]: 0.00036145292696287967 	Steps: 0.0625 	eeOld/ee:  4.085081635372487 	Order: 2
+ee[0]: 8.848120043258856e-05	eeOld[0]: 0.00036145292696287967	Steps: 0.0625	eeOld/ee:  4.085081635372487	Order: 2
 
-ee[0]: 2.185715574554159e-05 	eeOld[0]: 8.848120043258856e-05 	Steps: 0.03125 	eeOld/ee:  4.048157109858034 	Order: 2
+ee[0]: 2.185715574554159e-05	eeOld[0]: 8.848120043258856e-05		Steps: 0.03125	eeOld/ee:  4.048157109858034	Order: 2
 
-ee[0]: 5.429963963687889e-06 	eeOld[0]: 2.185715574554159e-05 	Steps: 0.015625 	eeOld/ee:  4.025285598893143 	Order: 2
+ee[0]: 5.429963963687889e-06	eeOld[0]: 2.185715574554159e-05		Steps: 0.015625	eeOld/ee:  4.025285598893143	Order: 2
 
 >>> 
 =========================== RESTART ==========================
@@ -119,8 +116,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -136,16 +132,16 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 4
-Enter the alpha: 0.5
-ee[0]: 0.0030849229590949045 	eeOld[0]: 0.015498289079444838 	Steps: 0.25 	eeOld/ee:  5.02388204987522 	Order: 2
+Enter the alpha: 2/3
+ee[0]: 0.002543189455108119		eeOld[0]: 0.012120579567875711	Steps: 0.25		eeOld/ee:  4.7658972254430125	Order: 2
 
-ee[0]: 0.0006825361948119557 	eeOld[0]: 0.0030849229590949045 	Steps: 0.125 	eeOld/ee:  4.519793942861632 	Order: 2
+ee[0]: 0.0005747874542783027	eeOld[0]: 0.002543189455108119	Steps: 0.125	eeOld/ee:  4.424573703163584	Order: 2
 
-ee[0]: 0.00016050230602793203 	eeOld[0]: 0.0006825361948119557 	Steps: 0.0625 	eeOld/ee:  4.252500862468448 	Order: 2
+ee[0]: 0.0001364238167554932	eeOld[0]: 0.0005747874542783027	Steps: 0.0625	eeOld/ee:  4.213248595063651	Order: 2
 
-ee[0]: 3.89230471622426e-05 	eeOld[0]: 0.00016050230602793203 	Steps: 0.03125 	eeOld/ee:  4.123580185254039 	Order: 2
+ee[0]: 3.322648891246338e-05	eeOld[0]: 0.0001364238167554932	Steps: 0.03125	eeOld/ee:  4.105875198396906	Order: 2
 
-ee[0]: 9.584482730473631e-06 	eeOld[0]: 3.89230471622426e-05 	Steps: 0.015625 	eeOld/ee:  4.061048285734577 	Order: 2
+ee[0]: 8.19871014712259e-06		eeOld[0]: 3.322648891246338e-05	Steps: 0.015625	eeOld/ee:  4.0526483210440745	Order: 2
 
 >>> 
 =========================== RESTART ==========================
@@ -157,8 +153,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -174,15 +169,15 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 5
-ee[0]: -0.0002727508442512683 	eeOld[0]: -0.002667217251280274 	Steps: 0.25 	eeOld/ee:  9.778951403806229 	Order: 3
+ee[0]: 0.0002727508442512683	eeOld[0]: 0.002667217251280274		Steps: 0.25		eeOld/ee:  9.778951403806229	Order: 3
 
-ee[0]: -3.0347526977947403e-05 	eeOld[0]: -0.0002727508442512683 	Steps: 0.125 	eeOld/ee:  8.987580584390543 	Order: 3
+ee[0]: 3.0347526977947403e-05	eeOld[0]: 0.0002727508442512683		Steps: 0.125	eeOld/ee:  8.987580584390543	Order: 3
 
-ee[0]: -3.565327573284982e-06 	eeOld[0]: -3.0347526977947403e-05 	Steps: 0.0625 	eeOld/ee:  8.511848169391666 	Order: 3
+ee[0]: 3.565327573284982e-06	eeOld[0]: 3.0347526977947403e-05	Steps: 0.0625	eeOld/ee:  8.511848169391666	Order: 3
 
-ee[0]: -4.316962636252697e-07 	eeOld[0]: -3.565327573284982e-06 	Steps: 0.03125 	eeOld/ee:  8.258879850717992 	Order: 3
+ee[0]: 4.316962636252697e-07	eeOld[0]: 3.565327573284982e-06		Steps: 0.03125	eeOld/ee:  8.258879850717992	Order: 3
 
-ee[0]: -5.3099477148599306e-08 	eeOld[0]: -4.316962636252697e-07 	Steps: 0.015625 	eeOld/ee:  8.129953189881029 	Order: 3
+ee[0]: 5.3099477148599306e-08	eeOld[0]: 4.316962636252697e-07		Steps: 0.015625	eeOld/ee:  8.129953189881029	Order: 3
 
 >>> 
 =========================== RESTART ==========================
@@ -194,8 +189,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -211,15 +205,15 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 6
-ee[0]: -0.00018594356738699247 	eeOld[0]: -0.001824430001104549 	Steps: 0.25 	eeOld/ee:  9.811740340054245 	Order: 3
+ee[0]: 0.00018594356738699247	eeOld[0]: 0.001824430001104549		Steps: 0.25		eeOld/ee:  9.811740340054245	Order: 3
 
-ee[0]: -2.081758298222436e-05 	eeOld[0]: -0.00018594356738699247 	Steps: 0.125 	eeOld/ee:  8.932044010381286 	Order: 3
+ee[0]: 2.081758298222436e-05	eeOld[0]: 0.00018594356738699247	Steps: 0.125	eeOld/ee:  8.932044010381286	Order: 3
 
-ee[0]: -2.4575614797628376e-06 	eeOld[0]: -2.081758298222436e-05 	Steps: 0.0625 	eeOld/ee:  8.47082897158419 	Order: 3
+ee[0]: 2.4575614797628376e-06	eeOld[0]: 2.081758298222436e-05		Steps: 0.0625	eeOld/ee:  8.47082897158419		Order: 3
 
-ee[0]: -2.983933663491811e-07 	eeOld[0]: -2.4575614797628376e-06 	Steps: 0.03125 	eeOld/ee:  8.235978935560482 	Order: 3
+ee[0]: 2.983933663491811e-07	eeOld[0]: 2.4575614797628376e-06	Steps: 0.03125	eeOld/ee:  8.235978935560482	Order: 3
 
-ee[0]: -3.6756877208610206e-08 	eeOld[0]: -2.983933663491811e-07 	Steps: 0.015625 	eeOld/ee:  8.118028217023921 	Order: 3
+ee[0]: 3.6756877208610206e-08	eeOld[0]: 2.983933663491811e-07		Steps: 0.015625	eeOld/ee:  8.118028217023921	Order: 3
 
 >>> 
 =========================== RESTART ==========================
@@ -231,8 +225,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -253,15 +246,15 @@ Case 2: if b3≠0, where c3=0, then enter: 2 b3
 Case 3: if b3≠0, where c3≠0, then enter: 3 b3
 
 Enter your case choice: 1 1/3 2/3
-ee[0]: -0.00027275084425115725 	eeOld[0]: -0.002667217251280274 	Steps: 0.25 	eeOld/ee:  9.77895140381021 	Order: 3
+ee[0]: 0.00027275084425115725	eeOld[0]: 0.002667217251280274		Steps: 0.25		eeOld/ee:  9.77895140381021		Order: 3
 
-ee[0]: -3.0347526977947403e-05 	eeOld[0]: -0.00027275084425115725 	Steps: 0.125 	eeOld/ee:  8.987580584386883 	Order: 3
+ee[0]: 3.0347526977947403e-05	eeOld[0]: 0.00027275084425115725	Steps: 0.125	eeOld/ee:  8.987580584386883	Order: 3
 
-ee[0]: -3.565327573284982e-06 	eeOld[0]: -3.0347526977947403e-05 	Steps: 0.0625 	eeOld/ee:  8.511848169391666 	Order: 3
+ee[0]: 3.565327573284982e-06	eeOld[0]: 3.0347526977947403e-05	Steps: 0.0625	eeOld/ee:  8.511848169391666	Order: 3
 
-ee[0]: -4.316962636252697e-07 	eeOld[0]: -3.565327573284982e-06 	Steps: 0.03125 	eeOld/ee:  8.258879850717992 	Order: 3
+ee[0]: 4.316962636252697e-07	eeOld[0]: 3.565327573284982e-06		Steps: 0.03125	eeOld/ee:  8.258879850717992	Order: 3
 
-ee[0]: -5.3099477148599306e-08 	eeOld[0]: -4.316962636252697e-07 	Steps: 0.015625 	eeOld/ee:  8.129953189881029 	Order: 3
+ee[0]: 5.3099477148599306e-08	eeOld[0]: 4.316962636252697e-07		Steps: 0.015625	eeOld/ee:  8.129953189881029	Order: 3
 
 >>> 
 =========================== RESTART ==========================
@@ -273,8 +266,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -295,15 +287,15 @@ Case 2: if b3≠0, where c3=0, then enter: 2 b3
 Case 3: if b3≠0, where c3≠0, then enter: 3 b3
 
 Enter your case choice: 2 1/4
-ee[0]: -0.0006322105562531766 	eeOld[0]: -0.007609995158882721 	Steps: 0.25 	eeOld/ee:  12.037121309684686 	Order: 4
+ee[0]: 0.0006322105562531766	eeOld[0]: 0.007609995158882721	Steps: 0.25		eeOld/ee:  12.037121309684686	Order: 4
 
-ee[0]: -6.360281379758081e-05 	eeOld[0]: -0.0006322105562531766 	Steps: 0.125 	eeOld/ee:  9.939977785656131 	Order: 3
+ee[0]: 6.360281379758081e-05	eeOld[0]: 0.0006322105562531766	Steps: 0.125	eeOld/ee:  9.939977785656131	Order: 3
 
-ee[0]: -7.121231031192998e-06 	eeOld[0]: -6.360281379758081e-05 	Steps: 0.0625 	eeOld/ee:  8.931435241881996 	Order: 3
+ee[0]: 7.121231031192998e-06	eeOld[0]: 6.360281379758081e-05	Steps: 0.0625	eeOld/ee:  8.931435241881996	Order: 3
 
-ee[0]: -8.424022523989549e-07 	eeOld[0]: -7.121231031192998e-06 	Steps: 0.03125 	eeOld/ee:  8.453480520634269 	Order: 3
+ee[0]: 8.424022523989549e-07	eeOld[0]: 7.121231031192998e-06	Steps: 0.03125	eeOld/ee:  8.453480520634269	Order: 3
 
-ee[0]: -1.0243953607602663e-07 	eeOld[0]: -8.424022523989549e-07 	Steps: 0.015625 	eeOld/ee:  8.223409482973027 	Order: 3
+ee[0]: 1.0243953607602663e-07	eeOld[0]: 8.424022523989549e-07	Steps: 0.015625	eeOld/ee:  8.223409482973027	Order: 3
 
 >>> 
 =========================== RESTART ==========================
@@ -315,8 +307,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -337,15 +328,15 @@ Case 2: if b3≠0, where c3=0, then enter: 2 b3
 Case 3: if b3≠0, where c3≠0, then enter: 3 b3
 
 Enter your case choice: 3 3/4
-ee[0]: -0.00017567939724316695 	eeOld[0]: -0.0015536901067895181 	Steps: 0.25 	eeOld/ee:  8.843894794555649 	Order: 3
+ee[0]: 0.00017567939724316695	eeOld[0]: 0.0015536901067895181		Steps: 0.25		eeOld/ee:  8.843894794555649	Order: 3
 
-ee[0]: -2.0391392565821675e-05 	eeOld[0]: -0.00017567939724316695 	Steps: 0.125 	eeOld/ee:  8.615370268415404 	Order: 3
+ee[0]: 2.0391392565821675e-05	eeOld[0]: 0.00017567939724316695	Steps: 0.125	eeOld/ee:  8.615370268415404	Order: 3
 
-ee[0]: -2.4422819200342616e-06 	eeOld[0]: -2.0391392565821675e-05 	Steps: 0.0625 	eeOld/ee:  8.349319707339772 	Order: 3
+ee[0]: 2.4422819200342616e-06	eeOld[0]: 2.0391392565821675e-05	Steps: 0.0625	eeOld/ee:  8.349319707339772	Order: 3
 
-ee[0]: -2.984414653184331e-07 	eeOld[0]: -2.4422819200342616e-06 	Steps: 0.03125 	eeOld/ee:  8.183453721581145 	Order: 3
+ee[0]: 2.984414653184331e-07	eeOld[0]: 2.4422819200342616e-06	Steps: 0.03125	eeOld/ee:  8.183453721581145	Order: 3
 
-ee[0]: -3.687338445690358e-08 	eeOld[0]: -2.984414653184331e-07 	Steps: 0.015625 	eeOld/ee:  8.09368246810221 	Order: 3
+ee[0]: 3.687338445690358e-08	eeOld[0]: 2.984414653184331e-07		Steps: 0.015625	eeOld/ee:  8.09368246810221		Order: 3
 
 >>> 
 =========================== RESTART ==========================
@@ -357,8 +348,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -374,14 +364,16 @@ f4 0 1 1
 
 Enter the method with values respectively (Use spaces between the values like shown above):
 8
-ee[0]: -2.931114554405312e-07 	eeOld[0]: -3.3901810645664554e-05 	Steps: 0.25 	eeOld/ee:  115.66184131122377 	Order: 7
+ee[0]: 2.931114554405312e-07	eeOld[0]: 3.3901810645664554e-05	Steps: 0.25		eeOld/ee:  115.66184131122377	Order: 7
 
-Traceback (most recent call last):
-  File "D:\OneDrive - Saint Marys University\Courses\2020 Fall Term\CSCI 4500\Research-Thesis\main.py", line 18, in <module>
-    em.findOrder(ee, j)
-  File "D:\OneDrive - Saint Marys University\Courses\2020 Fall Term\CSCI 4500\Research-Thesis\EulersMethod.py", line 45, in findOrder
-    "\tOrder:", round(math.log(ratio, 2)))
-ValueError: math domain error
+ee[0]: 2.0787749299699954e-08	eeOld[0]: 2.931114554405312e-07		Steps: 0.125	eeOld/ee:  14.100201576163991	Order: 4
+
+ee[0]: 2.2650676889668375e-09	eeOld[0]: 2.0787749299699954e-08	Steps: 0.0625	eeOld/ee:  9.17753999183214		Order: 3
+
+ee[0]: 1.6800882907119785e-10	eeOld[0]: 2.2650676889668375e-09	Steps: 0.03125	eeOld/ee:  13.481837243249638	Order: 4
+
+ee[0]: 1.1270762101389664e-11	eeOld[0]: 1.6800882907119785e-10	Steps: 0.015625	eeOld/ee:  14.906607695187061	Order: 4
+
 >>> 
 =========================== RESTART ==========================
 Simple: f1 t tfinal y0
@@ -392,8 +384,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -417,15 +408,15 @@ Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
 Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
 
 Enter your case choice: 1 1/3 2/3
-ee[0]: -4.0209175709016165e-06 	eeOld[0]: -0.00018986287003985858 	Steps: 0.25 	eeOld/ee:  47.21879190308429 	Order: 6
+ee[0]: 4.0209175709016165e-06	eeOld[0]: 0.00018986287003985858	Steps: 0.25		eeOld/ee:  47.21879190308429	Order: 6
 
-ee[0]: -1.0489367296973029e-07 	eeOld[0]: -4.0209175709016165e-06 	Steps: 0.125 	eeOld/ee:  38.333270797581406 	Order: 5
+ee[0]: 1.0489367296973029e-07	eeOld[0]: 4.0209175709016165e-06	Steps: 0.125	eeOld/ee:  38.333270797581406	Order: 5
 
-ee[0]: -3.2606656263922673e-09 	eeOld[0]: -1.0489367296973029e-07 	Steps: 0.0625 	eeOld/ee:  32.16940495851729 	Order: 5
+ee[0]: 3.2606656263922673e-09	eeOld[0]: 1.0489367296973029e-07	Steps: 0.0625	eeOld/ee:  32.16940495851729	Order: 5
 
-ee[0]: -1.1805512123430617e-10 	eeOld[0]: -3.2606656263922673e-09 	Steps: 0.03125 	eeOld/ee:  27.61985750639961 	Order: 5
+ee[0]: 1.1805512123430617e-10	eeOld[0]: 3.2606656263922673e-09	Steps: 0.03125	eeOld/ee:  27.61985750639961	Order: 5
 
-ee[0]: -4.945377440890297e-12 	eeOld[0]: -1.1805512123430617e-10 	Steps: 0.015625 	eeOld/ee:  23.871812140804597 	Order: 5
+ee[0]: 4.945377440890297e-12	eeOld[0]: 1.1805512123430617e-10	Steps: 0.015625	eeOld/ee:  23.871812140804597	Order: 5
 
 >>> 
 =========================== RESTART ==========================
@@ -437,8 +428,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -462,14 +452,16 @@ Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
 Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
 
 Enter your case choice: 2 1/3
-ee[0]: -2.931114553295089e-07 	eeOld[0]: -3.3901810645664554e-05 	Steps: 0.25 	eeOld/ee:  115.66184135503319 	Order: 7
+ee[0]: 2.931114553295089e-07	eeOld[0]: 3.3901810645664554e-05	Steps: 0.25		eeOld/ee:  115.66184135503319	Order: 7
 
-Traceback (most recent call last):
-  File "D:\OneDrive - Saint Marys University\Courses\2020 Fall Term\CSCI 4500\Research-Thesis\main.py", line 18, in <module>
-    em.findOrder(ee, j)
-  File "D:\OneDrive - Saint Marys University\Courses\2020 Fall Term\CSCI 4500\Research-Thesis\EulersMethod.py", line 45, in findOrder
-    "\tOrder:", round(math.log(ratio, 2)))
-ValueError: math domain error
+ee[0]: 2.0787749299699954e-08	eeOld[0]: 2.931114553295089e-07		Steps: 0.125	eeOld/ee:  14.100201570823234	Order: 4
+
+ee[0]: 2.2650676889668375e-09	eeOld[0]: 2.0787749299699954e-08	Steps: 0.0625	eeOld/ee:  9.17753999183214		Order: 3
+
+ee[0]: 1.6800882907119785e-10	eeOld[0]: 2.2650676889668375e-09	Steps: 0.03125	eeOld/ee:  13.481837243249638	Order: 4
+
+ee[0]: 1.1270762101389664e-11	eeOld[0]: 1.6800882907119785e-10	Steps: 0.015625	eeOld/ee:  14.906607695187061	Order: 4
+
 >>> 
 =========================== RESTART ==========================
 Simple: f1 t tfinal y0
@@ -480,8 +472,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -505,15 +496,15 @@ Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
 Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
 
 Enter your case choice: 3 1/6
-ee[0]: -2.3454261476318905e-06 	eeOld[0]: -2.1275168259560218e-05 	Steps: 0.25 	eeOld/ee:  9.07091799971666 	Order: 3
+ee[0]: 2.3454261476318905e-06	eeOld[0]: 2.1275168259560218e-05	Steps: 0.25		eeOld/ee:  9.07091799971666		Order: 3
 
-ee[0]: -1.3163718004527425e-07 	eeOld[0]: -2.3454261476318905e-06 	Steps: 0.125 	eeOld/ee:  17.81735332544516 	Order: 4
+ee[0]: 1.3163718004527425e-07	eeOld[0]: 2.3454261476318905e-06	Steps: 0.125	eeOld/ee:  17.81735332544516	Order: 4
 
-ee[0]: -7.280756442185066e-09 	eeOld[0]: -1.3163718004527425e-07 	Steps: 0.0625 	eeOld/ee:  18.080151573614227 	Order: 4
+ee[0]: 7.280756442185066e-09	eeOld[0]: 1.3163718004527425e-07	Steps: 0.0625	eeOld/ee:  18.080151573614227	Order: 4
 
-ee[0]: -4.2068559746866185e-10 	eeOld[0]: -7.280756442185066e-09 	Steps: 0.03125 	eeOld/ee:  17.306883064204335 	Order: 4
+ee[0]: 4.2068559746866185e-10	eeOld[0]: 7.280756442185066e-09		Steps: 0.03125	eeOld/ee:  17.306883064204335	Order: 4
 
-ee[0]: -2.516487018766611e-11 	eeOld[0]: -4.2068559746866185e-10 	Steps: 0.015625 	eeOld/ee:  16.717177332186267 	Order: 4
+ee[0]: 2.516487018766611e-11	eeOld[0]: 4.2068559746866185e-10	Steps: 0.015625	eeOld/ee:  16.717177332186267	Order: 4
 
 >>> 
 =========================== RESTART ==========================
@@ -525,8 +516,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -550,15 +540,15 @@ Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
 Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
 
 Enter your case choice: 4 1/6
-ee[0]: 1.631614986563612e-06 	eeOld[0]: 1.4215459530619867e-05 	Steps: 0.25 	eeOld/ee:  8.71250855605306 	Order: 3
+ee[0]: 1.631614986563612e-06	eeOld[0]: 1.4215459530619867e-05	Steps: 0.25		eeOld/ee:  8.71250855605306		Order: 3
 
-ee[0]: 1.1531485311078171e-07 	eeOld[0]: 1.631614986563612e-06 	Steps: 0.125 	eeOld/ee:  14.149217924217771 	Order: 4
+ee[0]: 1.1531485311078171e-07	eeOld[0]: 1.631614986563612e-06		Steps: 0.125	eeOld/ee:  14.149217924217771	Order: 4
 
-ee[0]: 7.487757414104124e-09 	eeOld[0]: 1.1531485311078171e-07 	Steps: 0.0625 	eeOld/ee:  15.400452596604135 	Order: 4
+ee[0]: 7.487757414104124e-09	eeOld[0]: 1.1531485311078171e-07	Steps: 0.0625	eeOld/ee:  15.400452596604135	Order: 4
 
-ee[0]: 4.747335857757662e-10 	eeOld[0]: 7.487757414104124e-09 	Steps: 0.03125 	eeOld/ee:  15.772546199503276 	Order: 4
+ee[0]: 4.747335857757662e-10	eeOld[0]: 7.487757414104124e-09		Steps: 0.03125	eeOld/ee:  15.772546199503276	Order: 4
 
-ee[0]: 2.985123259691136e-11 	eeOld[0]: 4.747335857757662e-10 	Steps: 0.015625 	eeOld/ee:  15.903316026718636 	Order: 4
+ee[0]: 2.985123259691136e-11	eeOld[0]: 4.747335857757662e-10		Steps: 0.015625	eeOld/ee:  15.903316026718636	Order: 4
 
 >>> 
 =========================== RESTART ==========================
@@ -570,8 +560,7 @@ Test F5: f5 t tfinal y0
 Test F6: f6 t tfinal y0
 Test F7: f7 t tfinal y0
 Test F8: f8 t tfinal y0
-Test F9: f9 t tfinal y0
-Test F10: f10 t tfinal y0 alpha
+Test F9: f9 t tfinal y0 alpha
 
 Enter the formula with values respectively (Use spaces between the values like shown above):
 f4 0 1 1
@@ -595,12 +584,14 @@ Case 4: c2 = 1, c3 = 1/2, b4≠0, then enter: 4 b4
 Case 5: c2≠0, c3 = 1/2, b2 = 0, then enter: 5 c2
 
 Enter your case choice: 5 1
-ee[0]: 1.631614986563612e-06 	eeOld[0]: 1.4215459530619867e-05 	Steps: 0.25 	eeOld/ee:  8.71250855605306 	Order: 3
+ee[0]: 1.631614986563612e-06	eeOld[0]: 1.4215459530619867e-05	Steps: 0.25		eeOld/ee:  8.71250855605306		Order: 3
 
-ee[0]: 1.1531485311078171e-07 	eeOld[0]: 1.631614986563612e-06 	Steps: 0.125 	eeOld/ee:  14.149217924217771 	Order: 4
+ee[0]: 1.1531485311078171e-07	eeOld[0]: 1.631614986563612e-06		Steps: 0.125	eeOld/ee:  14.149217924217771	Order: 4
 
-ee[0]: 7.487757414104124e-09 	eeOld[0]: 1.1531485311078171e-07 	Steps: 0.0625 	eeOld/ee:  15.400452596604135 	Order: 4
+ee[0]: 7.487757414104124e-09	eeOld[0]: 1.1531485311078171e-07	Steps: 0.0625	eeOld/ee:  15.400452596604135	Order: 4
 
-ee[0]: 4.747335857757662e-10 	eeOld[0]: 7.487757414104124e-09 	Steps: 0.03125 	eeOld/ee:  15.772546199503276 	Order: 4
+ee[0]: 4.747335857757662e-10	eeOld[0]: 7.487757414104124e-09		Steps: 0.03125	eeOld/ee:  15.772546199503276	Order: 4
 
-ee[0]: 2.985123259691136e-11 	eeOld[0]: 4.747335857757662e-10 	Steps: 0.015625 	eeOld/ee:  15.903316026718636 	Order: 4
+ee[0]: 2.985123259691136e-11	eeOld[0]: 4.747335857757662e-10		Steps: 0.015625	eeOld/ee:  15.903316026718636	Order: 4
+
+>>> 
