@@ -13,6 +13,8 @@ def displayFormulas():
     print ("Test F7: f7 t tfinal y0")
     print ("Test F8: f8 t tfinal y0")
     print ("Test F9: f9 t tfinal y0 alpha")
+    fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
+    return setFormulaValues(fname)
 
 '''
 Name: setFormulaValues

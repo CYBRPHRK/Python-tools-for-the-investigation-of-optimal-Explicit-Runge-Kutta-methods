@@ -12,6 +12,8 @@ def displayMethods():
     print ("7. Third Order RK Method")
     print ("8. RK4 Method")
     print ("9. FourthOrderRKMethod")
+    mname = input("\nEnter the method with values respectively (Use spaces between the values like shown above):\n")
+    setMethodValues(mname)
 
 def setMethodValues(mname):
     global methodNumber
@@ -68,7 +70,6 @@ def chooseCase():
                 data[i] = int(res[0]) / int(res[1])
             else:
                 data[i] = float(data[i])
-            
         
         case = int(data[0]) 
         if (case == 1):

@@ -3,20 +3,35 @@ import Function as f
 import Methods as m
 import bokeh.plotting as bp
 
-f.displayFormulas()
-fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
-t0, tf, y0 = f.setFormulaValues(fname)
-em.setInitialValues(t0, tf, y0)
+def displayMenu():
+    print ("1. Specific ODE on Specific Method")
+    print ("2. Specific ODE on All Methods and Export in an file")
+    print ("3. Analyze the Computations from a file")
+    choice = input("Enter your choice: ")
+    print ("")
+    return int(choice)
 
-m.displayMethods()
-mname = input("\nEnter the method with values respectively (Use spaces between the values like shown above):\n")
-m.setMethodValues(mname)
+def chooseMenuOption(choice):
+    if (choice == 1):
+        specificODESpecificMethod()
+    elif (choice == 2):
+        specificODEAllMethods()
+    else:
+        print ("Invalid Choice.")
 
-j = 1
-while(j <= 6):
-    ee, tt, yy = em.eulersMethod(j)
-    em.findOrder(ee, j)
-    j = j + 1
+def specificODESpecificMethod():
+    t0, tf, y0 = f.displayFormulas()
+    em.setInitialValues(t0, tf, y0)
+
+    m.displayMethods()
+
+    j = 1
+    while(j <= 6):
+        ee, tt, yy = em.eulersMethod(j)
+        em.findOrder(ee, j)
+        j = j + 1
+
+chooseMenuOption(displayMenu())
 
 '''
 ee, tt, yy = em.eulersMethod(3)
