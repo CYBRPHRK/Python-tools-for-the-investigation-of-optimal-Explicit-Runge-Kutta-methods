@@ -16,6 +16,8 @@ def chooseMenuOption(choice):
         specificODESpecificMethod()
     elif (choice == 2):
         specificODEAllMethods()
+    elif (choice == 3):
+        computationsAnalysis()
     else:
         print ("Invalid Choice.")
 
@@ -30,6 +32,30 @@ def specificODESpecificMethod():
         ee, tt, yy = em.eulersMethod(j)
         em.findOrder(ee, j)
         j = j + 1
+
+def specificODEAllMethods():
+    t0, tf, y0 = f.displayFormulas()
+    em.setInitialValues(t0, tf, y0)
+
+    methodNumber = 1
+    i = 1
+    while(methodNumber < 10):
+        print ("methodNumber:", methodNumber)
+        m.setMethodValues(methodNumber)
+        j = 1
+        while(j <= 6):
+            ee, tt, yy = em.eulersMethod(j)
+            em.findOrder(ee, j)
+            j = j + 1
+            
+        if ((methodNumber != 7) and (methodNumber != 9)):
+            methodNumber += 1
+        else:
+            if (((methodNumber == 7) and (i == 2)) or ((methodNumber == 9) and (i == 4))):
+                methodNumber += 1
+                i = 1
+            else:
+                i += 1
 
 chooseMenuOption(displayMenu())
 
