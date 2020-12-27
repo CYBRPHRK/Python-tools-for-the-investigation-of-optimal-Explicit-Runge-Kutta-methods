@@ -41,21 +41,25 @@ def eulersMethod(steps):
 def findOrder(ee, steps):
     global eeOld
     i = 0
+    order = ""
     if (steps > 1):
         for e in ee[len(ee) -1]:
             ratio = eeOld[i]/e
-            print ("ee[" + str(i) + "]:", e, end='')
-            print ("\teeOld["+ str(i) +"]:", eeOld[i], end='')
-            print ("\tSteps:", math.pow(2, (steps * (-1))), end='')
-            print ("\teeOld/ee: ", ratio, end='')
+            order = order + ("ee[" + str(i) + "]: " + str(e)
+                     + "\tSteps: " + str(math.pow(2, (steps * (-1))))
+                     + "\teeOld/ee: " + str(ratio))
             if (ratio == 0):
-                print ("\tOrder: n/a")
+                order = order + "\tOrder: n/a"
             else:
-                print ("\tOrder:", round(math.log(ratio, 2)))
-            
+                order = order + "\tOrder: " + str(round(math.log(ratio, 2)))
             i += 1
-        print()
+            order = order + "\n"
+    else:
+        for e in ee[len(ee) -1]:
+            order = order + ("ee[" + str(i) + "]: " + str(e)
+                     + "\tSteps: " + str(math.pow(2, (steps * (-1)))) + "\n")
     eeOld = ee[len(ee) - 1]
+    return order
 
 #Depreciated
 def plotGraph(index, ee, tt, yy):

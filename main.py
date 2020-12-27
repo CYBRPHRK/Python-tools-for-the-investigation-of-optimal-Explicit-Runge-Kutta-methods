@@ -1,7 +1,7 @@
 import EulersMethod as em
 import Function as f
 import Methods as m
-import bokeh.plotting as bp
+#import bokeh.plotting as bp
 
 def displayMenu():
     print ("1. Specific ODE on Specific Method")
@@ -30,7 +30,8 @@ def specificODESpecificMethod():
     j = 1
     while(j <= 6):
         ee, tt, yy = em.eulersMethod(j)
-        em.findOrder(ee, j)
+        order = em.findOrder(ee, j)
+        print (order)
         j = j + 1
 
 def specificODEAllMethods():
