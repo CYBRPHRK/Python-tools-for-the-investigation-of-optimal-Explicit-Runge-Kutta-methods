@@ -1,6 +1,7 @@
 import EulersMethod as em
 import Function as f
 import Methods as m
+import FileIO.FileIO as FileIO
 #import bokeh.plotting as bp
 
 def displayMenu():
@@ -38,17 +39,22 @@ def specificODEAllMethods():
     t0, tf, y0 = f.displayFormulas()
     em.setInitialValues(t0, tf, y0)
 
+    file = FileIO.FileIO("Test Results/F" + str(f.formulaNumber) + ".txt", "w")
+    file.write("F" + str(f.formulaNumber))
+
+    orders = []
     methodNumber = 1
     i = 1
     while(methodNumber < 10):
-        print ("methodNumber:", methodNumber)
+        file.writeLine("methodNumber: " + str(methodNumber))
         m.setMethodValues(methodNumber)
         j = 1
         while(j <= 6):
             ee, tt, yy = em.eulersMethod(j)
-            em.findOrder(ee, j)
+            order = em.findOrder(ee, j)
+            file.writeLine(order)
             j = j + 1
-            
+        orders.append(order)
         if ((methodNumber != 7) and (methodNumber != 9)):
             methodNumber += 1
         else:
@@ -57,6 +63,7 @@ def specificODEAllMethods():
                 i = 1
             else:
                 i += 1
+    del file
 
 chooseMenuOption(displayMenu())
 
