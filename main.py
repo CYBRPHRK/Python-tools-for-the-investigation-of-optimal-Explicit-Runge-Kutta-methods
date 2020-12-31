@@ -40,14 +40,27 @@ def specificODEAllMethods():
     em.setInitialValues(t0, tf, y0)
 
     file = FileIO.FileIO("Test Results/F" + str(f.formulaNumber) + ".txt", "w")
-    file.write("F" + str(f.formulaNumber))
+    fname = "F" + str(f.formulaNumber) + " " + str(t0) + " " + str(tf)
+    for y in y0:
+        fname = fname + " " + str(y)
+    file.write(fname)
 
     orders = []
     methodNumber = 1
     i = 1
     while(methodNumber < 10):
-        file.writeLine("methodNumber: " + str(methodNumber))
-        m.setMethodValues(methodNumber)
+        case = i
+        methodInfo = "\nmethodNumber: " + str(methodNumber)
+        if (methodNumber == 7):
+            case = case + 1
+            methodInfo = methodInfo + " Case: " + str(case)
+        elif (methodNumber == 9):
+            if (i != 1):
+                case = case + 1
+
+            methodInfo = methodInfo + " Case: " + str(case)
+        file.writeLine(methodInfo)
+        m.setMethodValues(methodNumber, True, case)
         j = 1
         while(j <= 6):
             ee, tt, yy = em.eulersMethod(j)

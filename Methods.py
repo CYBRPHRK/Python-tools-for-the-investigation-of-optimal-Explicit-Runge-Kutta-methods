@@ -13,19 +13,42 @@ def displayMethods():
     print ("8. RK4 Method")
     print ("9. FourthOrderRKMethod")
     mname = input("\nEnter the method with values respectively (Use spaces between the values like shown above):\n")
-    setMethodValues(mname)
+    setMethodValues(mname, False)
 
-def setMethodValues(mname):
-    global methodNumber
+def setMethodValues(mname, auto, caseNumber=None):
+    global methodNumber, case
     
     methodNumber = int(mname)
     if ((methodNumber < 1) and (methodNumber > 8)):
         print ("No Method with that number.")
         exit()
-    
-    chooseCase()
 
-def chooseCase():
+    if (auto):
+        case = caseNumber
+        autoChooseCase()
+    else:
+        userChooseCase()
+
+def autoChooseCase():
+    global alpha, beta
+    if (methodNumber == 4):
+        alpha = 2/3
+    elif (methodNumber == 7):
+        if (case == 2):
+            alpha = 1/4
+        else:
+            alpha = 3/4
+    elif (methodNumber == 9):
+        if (case == 1):
+            alpha = 1/3
+            beta = 2/3
+        else:
+            if ((case == 3) or (case == 4)):
+                alpha = 1/6
+            else:
+                alpha = 1
+
+def userChooseCase():
     global alpha, beta, case
     if (methodNumber == 4):
         alpha = input("Enter the alpha: ")
