@@ -14,7 +14,6 @@ def eulersMethod(steps):
     t = t0
     tfinal = tf
     y = y0[:]
-    #h = (tfinal - t)/steps
     h = math.pow(2, (steps * (-1)))
     tt = [t]
     yy = [y[:]]
@@ -58,6 +57,7 @@ def findOrder(ee, steps):
         for e in ee[len(ee) -1]:
             order = order + ("ee[" + str(i) + "]: " + str(e)
                      + "\tSteps: " + str(math.pow(2, (steps * (-1)))) + "\n")
+            i += 1
     eeOld = ee[len(ee) - 1]
     return order
 
