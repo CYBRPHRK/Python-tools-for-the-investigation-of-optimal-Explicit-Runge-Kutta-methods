@@ -19,13 +19,13 @@ class FileIO:
 
     def write(self, data):
         if not (self.file.writable()):
-            self.changeAccessMode("w")
+            self.changeAccessMode("a")
         self.file.write(data)
 
-    def writeLine(self, data):
+    def writeLine(self, data, end='\n'):
         if ((self.file.mode != "a") or (self.file.mode != "a+") or (self.file.mode != "ab") or (self.file.mode != "ab+")):
             self.changeAccessMode("a")
-        data = "\n" + data
+        data = data + end
         self.file.write(data)
 
     def __del__(self):
