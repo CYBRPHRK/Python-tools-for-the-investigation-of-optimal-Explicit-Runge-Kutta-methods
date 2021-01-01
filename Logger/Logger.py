@@ -4,9 +4,9 @@ import datetime as dt
 
 class Logger:
     def __init__(self, msg):
-        if (os.path.isfile("Debug/log.txt")):
-            os.remove("Debug/log.txt")
-        self.file = FileIO.FileIO("Debug/log.txt", "a")
+        if not (os.path.isdir("Debug")):
+            os.mkdir("Debug")
+        self.file = FileIO.FileIO("Debug/log.txt", "w")
         self.file.write(msg + "\n" + self.datetime() + "\n")
 
     def datetime(self):
@@ -14,6 +14,7 @@ class Logger:
 
     def info(self, msg, arg0=None, arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None,
              arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None):
+        
         args = [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15]
         
         for arg in args:
@@ -42,6 +43,29 @@ class Logger:
     def __del__(self):
         del self.file
 
+def initialize(msg):
+    global log
+    log = Logger(msg)
+    
+def info(msg, arg0=None, arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None,
+         arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None):
+    global log
+    log.info(msg, arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15)
+
+def warning(msg, arg0=None, arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None,
+         arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None):
+    global log
+    log.warning(msg, arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15)
+
+def error(msg, arg0=None, arg1=None, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None,
+         arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None):
+    global log
+    log.error(msg, arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15)
+
+def terminate():
+    global log
+    del log
+
 def test():
     log = Logger("Numerical Analysis Research Thesis Log")
 
@@ -55,4 +79,10 @@ def test():
     log.warning("Test Error", 123, "and", 456)
     del log
 
-test()
+def test2():
+    initialize("Numerical Analysis Research Thesis Log")
+    i = 10
+    info("Data", i, "More Data")
+    info("Data", i, "More Data")
+    info("Data", i, "More Data")
+    terminate()
