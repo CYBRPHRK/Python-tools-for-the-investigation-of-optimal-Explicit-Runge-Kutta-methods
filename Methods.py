@@ -14,7 +14,6 @@ def displayMethods():
     print ("8. RK4 Method")
     print ("9. FourthOrderRKMethod")
     mname = input("\nEnter the method with values respectively (Use spaces between the values like shown above):\n")
-    print (log.log)
     config.log.info("mname =", mname)
     setMethodValues(mname, False)
 

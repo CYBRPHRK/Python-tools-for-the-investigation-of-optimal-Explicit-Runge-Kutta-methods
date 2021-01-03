@@ -17,7 +17,7 @@ def displayFormulas():
     print ("Test F9: f9 t tfinal y0 alpha")
     fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
     config.log.info("fname =", fname)
-    return setFormulaValues(fname)
+    return fname
 
 '''
 Name: setFormulaValues

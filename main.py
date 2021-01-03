@@ -28,7 +28,7 @@ def chooseMenuOption(choice):
         print ("Invalid Choice.")
 
 def specificODESpecificMethod():
-    t0, tf, y0 = f.displayFormulas()
+    t0, tf, y0 = f.setFormulaValues(f.displayFormulas())
     em.setInitialValues(t0, tf, y0)
 
     m.displayMethods()
@@ -41,21 +41,21 @@ def specificODESpecificMethod():
         j = j + 1
 
 def specificODEAllMethods():
-    t0, tf, y0 = f.displayFormulas()
+    t0, tf, y0 = f.setFormulaValues(f.displayFormulas())
     em.setInitialValues(t0, tf, y0)
 
     config.file = FileIO.FileIO("Test Results/F" + str(f.formulaNumber) + ".txt", "w")
     fname = "F" + str(f.formulaNumber) + " " + str(t0) + " " + str(tf)
     for y in y0:
         fname = fname + " " + str(y)
-    config.file.write(fname)
+    config.file.write(fname, end='\n\n')
 
     orders = []
     methodNumber = 1
     i = 1
     while(methodNumber < 10):
         case = i
-        methodInfo = "\nmethodNumber: " + str(methodNumber)
+        methodInfo = "methodNumber: " + str(methodNumber)
         if (methodNumber == 7):
             case = case + 1
             methodInfo = methodInfo + " Case: " + str(case)
