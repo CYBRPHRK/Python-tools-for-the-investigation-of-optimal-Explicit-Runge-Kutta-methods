@@ -1,9 +1,11 @@
 import Simple as s
 import PredatorPrey as pp
+import config
 
 formulaNumber = 0
 
 def displayFormulas():
+    config.log.info("displayFormulas() started")
     print ("Simple: f1 t tfinal y0")
     print ("Predator Prey: f2 t tfinal x y alpha beta gamma delta")
     print ("Simple for System: f3 t tfinal x y")
@@ -14,6 +16,7 @@ def displayFormulas():
     print ("Test F8: f8 t tfinal y0")
     print ("Test F9: f9 t tfinal y0 alpha")
     fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
+    config.log.info("fname =", fname)
     return setFormulaValues(fname)
 
 '''
@@ -31,6 +34,7 @@ Returns:
         y[0]    : A list of initial values of y at time t0
 '''
 def setFormulaValues(fname):
+    config.log.info("setFormulaValues() started")
     global formulaNumber
     y0 = []
     data = fname.split()
@@ -71,6 +75,7 @@ Returns:
                     step t + h
 '''
 def formula(t, y):
+    config.log.info("formula() started")
     if (formulaNumber == 1):
         return s.simple(0, t, y)
     elif (formulaNumber == 2):
@@ -104,6 +109,7 @@ Returns:
                     step t
 '''
 def formulaExact(t, y):
+    config.log.info("formulaExact() started")
     if (formulaNumber == 1):
         return s.simple(1, t, y)
     elif (formulaNumber == 2):

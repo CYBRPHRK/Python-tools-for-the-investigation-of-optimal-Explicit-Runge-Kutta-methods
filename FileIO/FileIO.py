@@ -17,13 +17,8 @@ class FileIO:
         data = self.file.readline()
         return data
 
-    def write(self, data):
+    def write(self, data, end='\n'):
         if not (self.file.writable()):
-            self.changeAccessMode("a")
-        self.file.write(data)
-
-    def writeLine(self, data, end='\n'):
-        if ((self.file.mode != "a") or (self.file.mode != "a+") or (self.file.mode != "ab") or (self.file.mode != "ab+")):
             self.changeAccessMode("a")
         data = data + end
         self.file.write(data)
@@ -36,9 +31,9 @@ def test():
 
     f = FileIO("test1.txt", "w")
     f.write(data)
-    f.writeLine("\n\nMore text added")
+    f.write("\nMore text added", end='')
 
-    f.writeLine("\n\nMore text added to it")
+    f.write("\nMore text added to it")
     print (f.readLine(), end='')
     print (f.readLine(), end='')
     print (f.read(), end='')

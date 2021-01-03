@@ -1,4 +1,5 @@
 import Function as f
+import config
 
 methodNumber = alpha = beta = case = 0
 
@@ -13,9 +14,12 @@ def displayMethods():
     print ("8. RK4 Method")
     print ("9. FourthOrderRKMethod")
     mname = input("\nEnter the method with values respectively (Use spaces between the values like shown above):\n")
+    print (log.log)
+    config.log.info("mname =", mname)
     setMethodValues(mname, False)
 
 def setMethodValues(mname, auto, caseNumber=None):
+    config.log.info("setMethodValues() started")
     global methodNumber, case
     
     methodNumber = int(mname)
@@ -30,25 +34,34 @@ def setMethodValues(mname, auto, caseNumber=None):
         userChooseCase()
 
 def autoChooseCase():
+    config.log.info("autoChooseCase() started")
     global alpha, beta
+    caseInfo = ""
     if (methodNumber == 4):
         alpha = 2/3
+        caseInfo = " alpha=" + str(alpha)
     elif (methodNumber == 7):
         if (case == 2):
             alpha = 1/4
         else:
             alpha = 3/4
+        caseInfo = " b3=" + str(alpha)
     elif (methodNumber == 9):
         if (case == 1):
             alpha = 1/3
             beta = 2/3
+            caseInfo = " c2=" + str(alpha) + " c3=" + str(beta)
         else:
             if ((case == 3) or (case == 4)):
                 alpha = 1/6
+                caseInfo = " b" + str(case) + "="+ str(alpha)
             else:
                 alpha = 1
+                caseInfo = " c2=" + str(alpha)
+    config.file.write(caseInfo)
 
 def userChooseCase():
+    config.log.info("userChooseCase() started")
     global alpha, beta, case
     if (methodNumber == 4):
         alpha = input("Enter the alpha: ")
