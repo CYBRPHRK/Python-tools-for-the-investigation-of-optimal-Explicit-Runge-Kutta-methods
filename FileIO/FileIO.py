@@ -11,14 +11,14 @@ class FileIO:
             print ("Invalid access mode.")
 
     def changeAccessMode(self, accessMode):
-        if (hasattr(self, 'file')):
+        if (self.isCreated()):
             self.file.close()
             self.file = open(self.file.name, accessMode)
         else:
             print ("The object is not initialized. Check the file path or the accessMode.")
         
     def read(self):
-        if (hasattr(self, 'file')):
+        if (self.isCreated()):
             if not (self.file.readable()):
                 self.changeAccessMode("r")
             return self.file.read()
@@ -27,7 +27,7 @@ class FileIO:
             return "Nothing to read"
 
     def readLine(self):
-        if (hasattr(self, 'file')):
+        if (self.isCreated()):
             if not (self.file.readable()):
                 self.changeAccessMode("r")
             data = self.file.readline()
@@ -37,7 +37,7 @@ class FileIO:
             return "Nothing to read"
 
     def write(self, data, end='\n'):
-        if (hasattr(self, 'file')):
+        if (self.isCreated()):
             if not (self.file.writable()):
                 self.changeAccessMode("a")
             data = data + end
@@ -45,8 +45,17 @@ class FileIO:
         else:
             print ("The object is not initialized. Check the file path or the accessMode.")
 
+    def name(self):
+        return self.file.name
+
+    def mode(self):
+        return self.file.mode
+
+    def isCreated(self):
+        return hasattr(self, 'file')
+
     def __del__(self):
-        if (hasattr(self, 'file')):
+        if (self.isCreated()):
             self.file.close()
 
 def test():
