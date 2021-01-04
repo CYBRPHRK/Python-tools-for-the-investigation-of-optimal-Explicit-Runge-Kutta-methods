@@ -24,8 +24,9 @@ def chooseMenuOption(choice):
     elif (choice == 3):
         computationsAnalysis()
     else:
-        log.error("Invalid Choice.")
-        print ("Invalid Choice.")
+        config.log.error("Invalid Choice.")
+        print ("Invalid Choice.\n")
+        chooseMenuOption(displayMenu())
 
 def specificODESpecificMethod():
     t0, tf, y0 = f.setFormulaValues(f.displayFormulas())
@@ -81,6 +82,11 @@ def specificODEAllMethods():
                 i = 1
             else:
                 i += 1
+
+def computationsAnalysis():
+    fnumber = f.displayFormulasOnly()
+    config.file = FileIO.FileIO("Test Results/F" + str(fnumber) + ".txt", "r")
+    print (config.file.read())
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())

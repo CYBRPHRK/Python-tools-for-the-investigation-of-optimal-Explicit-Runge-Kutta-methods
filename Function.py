@@ -4,6 +4,16 @@ import config
 
 formulaNumber = 0
 
+'''
+Name: displayFormulas
+Desciption: A function to get the formula number along
+            with the respective values.
+Parameters:
+        None
+Returns:
+        fname   : returns a string with the formula number
+                    and values provided by the user
+'''
 def displayFormulas():
     config.log.info("displayFormulas() started")
     print ("Simple: f1 t tfinal y0")
@@ -18,6 +28,29 @@ def displayFormulas():
     fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
     config.log.info("fname =", fname)
     return fname
+
+'''
+Name: displayFormulasOnly
+Desciption: A function to get the formula number.
+Parameters:
+        None
+Returns:
+        fnumber : returns the formula number provided by the user
+'''
+def displayFormulasOnly():
+    config.log.info("displayFormulasOnly() started")
+    print ("1. Simple")
+    print ("2. Predator Prey")
+    print ("3. Simple for System")
+    print ("4. Test F4")
+    print ("5. Test F5")
+    print ("6. Test F6")
+    print ("7. Test F7")
+    print ("8. Test F8")
+    print ("9. Test F9")
+    fnumber = input("\nEnter the formula number for the computational analysis:\n")
+    config.log.info("fnumber =", fnumber)
+    return fnumber
 
 '''
 Name: setFormulaValues
