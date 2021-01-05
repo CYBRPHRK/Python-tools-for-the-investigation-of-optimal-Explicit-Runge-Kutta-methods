@@ -38,7 +38,9 @@ def specificODESpecificMethod():
     while(j <= 6):
         ee, tt, yy = em.eulersMethod(j)
         order = em.findOrder(ee, j)
-        print (order)
+        for x in order:
+            print (em.dictToString(x))
+        print ()
         j = j + 1
 
 def specificODEAllMethods():
@@ -71,7 +73,9 @@ def specificODEAllMethods():
         while(j <= 6):
             ee, tt, yy = em.eulersMethod(j)
             order = em.findOrder(ee, j)
-            config.file.write(order)
+            for x in order:
+                config.file.write(em.dictToString(x))
+            config.file.write("")
             j = j + 1
         orders.append(order)
         if ((methodNumber != 7) and (methodNumber != 9)):

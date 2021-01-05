@@ -40,26 +40,28 @@ def eulersMethod(steps):
 def findOrder(ee, steps):
     global eeOld
     i = 0
-    order = ""
-    if (steps > 1):
-        for e in ee[len(ee) -1]:
+    orders = []
+    for e in ee[len(ee) -1]:
+        order = {}
+        order["ee[" + str(i) + "]"] = e
+        order["Steps"] = math.pow(2, (steps * (-1)))
+        if (steps > 1):
             ratio = eeOld[i]/e
-            order = order + ("ee[" + str(i) + "]: " + str(e)
-                     + "\tSteps: " + str(math.pow(2, (steps * (-1))))
-                     + "\teeOld/ee: " + str(ratio))
+            order['eeOld/ee'] = ratio
             if (ratio == 0):
-                order = order + "\tOrder: n/a"
+                order['Order'] = 'n/a'
             else:
-                order = order + "\tOrder: " + str(round(math.log(ratio, 2)))
-            i += 1
-            order = order + "\n"
-    else:
-        for e in ee[len(ee) -1]:
-            order = order + ("ee[" + str(i) + "]: " + str(e)
-                     + "\tSteps: " + str(math.pow(2, (steps * (-1)))) + "\n")
-            i += 1
+                order['Order'] = round(math.log(ratio, 2))
+        i += 1
+        orders.append(order)
     eeOld = ee[len(ee) - 1]
-    return order
+    return orders
+
+def dictToString(dict):
+    dictString = ""
+    for x in dict:
+        dictString = dictString + x + ": " + str(dict.get(x)) + "\t"
+    return dictString.strip()
 
 #Depreciated
 def plotGraph(index, ee, tt, yy):
