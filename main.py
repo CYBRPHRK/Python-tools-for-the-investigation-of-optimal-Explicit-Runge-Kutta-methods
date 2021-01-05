@@ -86,7 +86,20 @@ def specificODEAllMethods():
 def computationsAnalysis():
     fnumber = f.displayFormulasOnly()
     config.file = FileIO.FileIO("Test Results/F" + str(fnumber) + ".txt", "r")
-    print (config.file.read())
+
+    # To stop the function from proceeding if the file is not created, return nothing
+    if not (config.file.isCreated()): return
+
+    f.setFormulaValues(config.file.readLine())
+    data = config.file.readLine()
+    while (data != ''):
+        if (data != '\n'):
+            data = data.split()
+            if (data[0] == 'methodNumber:'):
+                methodNumber = data[1]
+            elif (data[0].startswith('ee')):
+                print (data)
+        data = config.file.readLine()
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())
