@@ -2,6 +2,7 @@ import math
 import bokeh.plotting as bp
 import Methods as m
 import Function as f
+import config
 
 t0 = tf = 0
 eeOld = y0 = []
@@ -56,6 +57,36 @@ def findOrder(ee, steps):
         orders.append(order)
     eeOld = ee[len(ee) - 1]
     return orders
+
+def methodAccuracyRatio(orders):
+    config.file.write("Method Accuracy Ratios:")
+    for j in range (0, len(orders[0])):
+        minError = min(orders[1][j].get("ee[" + str(j) + "]"), orders[2][j].get("ee[" + str(j) + "]"),
+                       orders[3][j].get("ee[" + str(j) + "]"))
+        orders[1][j]['RelError'] = (orders[1][j].get("ee[" + str(j) + "]")) / minError
+        orders[2][j]['RelError'] = (orders[2][j].get("ee[" + str(j) + "]")) / minError
+        orders[3][j]['RelError'] = (orders[3][j].get("ee[" + str(j) + "]")) / minError
+        
+        minError = min(orders[4][j].get("ee[" + str(j) + "]"), orders[5][j].get("ee[" + str(j) + "]"),
+                       orders[6][j].get("ee[" + str(j) + "]"), orders[7][j].get("ee[" + str(j) + "]"))
+        orders[4][j]['RelError'] = (orders[4][j].get("ee[" + str(j) + "]")) / minError
+        orders[5][j]['RelError'] = (orders[5][j].get("ee[" + str(j) + "]")) / minError
+        orders[6][j]['RelError'] = (orders[6][j].get("ee[" + str(j) + "]")) / minError
+        orders[7][j]['RelError'] = (orders[7][j].get("ee[" + str(j) + "]")) / minError
+
+        minError = min(orders[8][j].get("ee[" + str(j) + "]"), orders[9][j].get("ee[" + str(j) + "]"),
+                       orders[10][j].get("ee[" + str(j) + "]"), orders[11][j].get("ee[" + str(j) + "]"),
+                       orders[12][j].get("ee[" + str(j) + "]"))
+        orders[8][j]['RelError'] = (orders[8][j].get("ee[" + str(j) + "]")) / minError
+        orders[9][j]['RelError'] = (orders[9][j].get("ee[" + str(j) + "]")) / minError
+        orders[10][j]['RelError'] = (orders[10][j].get("ee[" + str(j) + "]")) / minError
+        orders[11][j]['RelError'] = (orders[11][j].get("ee[" + str(j) + "]")) / minError
+        orders[12][j]['RelError'] = (orders[12][j].get("ee[" + str(j) + "]")) / minError
+
+    for x in orders:
+        for y in x:
+            config.file.write(dictToString(y))
+        config.file.write("")
 
 def dictToString(dict):
     dictString = ""

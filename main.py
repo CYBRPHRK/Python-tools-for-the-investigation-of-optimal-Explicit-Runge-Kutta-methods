@@ -86,7 +86,9 @@ def specificODEAllMethods():
                 i = 1
             else:
                 i += 1
+    em.methodAccuracyRatio(orders)
 
+'''
 def computationsAnalysis():
     fnumber = f.displayFormulasOnly()
     config.file = FileIO.FileIO("Test Results/F" + str(fnumber) + ".txt", "r")
@@ -104,6 +106,7 @@ def computationsAnalysis():
             elif (data[0].startswith('ee')):
                 print (data)
         data = config.file.readLine()
+'''
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())
