@@ -1,4 +1,5 @@
 import Function as f
+import scipy.optimize as scope
 import config
 
 methodNumber = alpha = beta = case = 0
@@ -37,7 +38,8 @@ def autoChooseCase():
     global alpha, beta
     caseInfo = ""
     if (methodNumber == 4):
-        alpha = 2/3
+        alpha = optimize(E2)
+        alpha = alpha[0]
         caseInfo = " alpha=" + str(alpha)
     elif (methodNumber == 7):
         if (case == 2):
@@ -226,13 +228,10 @@ def RalstonsThirdOrderMethod(t, y, h):
 
     return fy
 
-def thirdOrderRKMethod(t, y, h):
-    #Here, alpha is used for c2 or b3 and beta for c3
-    global alpha, beta
-
+def setValuesForThirdOrder(alpha):
     if (case == 1):
-        c2 = alpha
-        c3 = beta
+        c2 = alpha[0]
+        c3 = alpha[1]
         b1 = (2 - (3 * (c2 + c3)) + (6 * c2 * c3)) / (6 * c2 * c3)
         b2 = (c3 - (2/3)) / (2 * c2 * (c3 - c2))
         b3 = ((2/3) - c2) / (2 * c3 * (c3 - c2))
@@ -241,18 +240,26 @@ def thirdOrderRKMethod(t, y, h):
     elif (case == 2):
         c2 = 2/3
         c3 = 0
-        b3 = alpha
+        b3 = alpha[0]
         b1 = (1/4) - b3
         b2 = 3/4
         a31 = -1 / (4 * b3)
         a32 = 1 / (4 * b3)
     else:
         c2 = c3 = 2/3
-        b3 = alpha
+        b3 = alpha[0]
         b1 = 1/4
         b2 = (3/4) - b3
         a31 = ((8 * b3) - 3) / (12 * b3)
         a32 = 1 / (4 * b3)
+
+    return c2, c3, b1, b2, b3, a31, a32
+
+def thirdOrderRKMethod(t, y, h):
+    #Here, alpha is used for c2 or b3 and beta for c3
+    global alpha, beta
+
+    c2, c3, b1, b2, b3, a31, a32 = setValuesForThirdOrder([alpha, beta])
 
     '''print ("\nc2 =", c2)
     print ("c3 =", c3)
@@ -404,3 +411,34 @@ def FourthOrderRKMethod(t, y, h):
         fy.append((b1 * k1[i]) + (b2 * k2[i]) + (b3 * k3[i]) + (b4 * k4[i]))
 
     return fy
+
+def optimize(f):
+    if (f == E2):
+        alpha = [0.1]
+    elif(f == E3):
+        if (case == 1):
+            alpha = [0.1, 0.1]
+        elif ((case == 2) or (case == 3)):
+            alpha = [0.1]
+    elif(f == E4):
+        if (case == 1):
+            alpha = [0.1, 0.1]
+        elif ((case == 2) or (case == 3) or (case == 4) or (case == 5)):
+            alpha = [0.1]
+
+    res = scope.minimize(f, alpha)
+    config.log.info("Optimize Result:", res)
+    return res.x
+
+def E2(alpha):
+    b = [1 - (1 / (2 * alpha[0])), 1 / (2 * alpha[0])]
+    c = [0, alpha[0]]
+    A = [[0, 0], [alpha[0], 0]]
+
+    csq = [c[0] ** 2, c[1] ** 2]
+    bcsq = (b[0] * csq[0]) + (b[1] * csq[1])
+    Ac = [(A[0][0] * c[0]) + (A[0][1] * c[1]),(A[1][0] * c[0]) + (A[1][1] * c[1])]
+    bAc = (b[0] * Ac[0]) + (b[1] * Ac[1])
+    result = (((1/2) * (bcsq - (1/3))) ** 2) + ((bAc - (1/6)) ** 2)
+
+    return result
