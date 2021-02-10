@@ -1,5 +1,4 @@
 import Function as f
-import scipy.optimize as scope
 import config
 
 methodNumber = alpha = beta = case = 0
@@ -38,8 +37,7 @@ def autoChooseCase():
     global alpha, beta
     caseInfo = ""
     if (methodNumber == 4):
-        alpha = optimize(E2)
-        alpha = alpha[0]
+        alpha = 2/3
         caseInfo = " alpha=" + str(alpha)
     elif (methodNumber == 7):
         if (case == 2):
@@ -411,34 +409,3 @@ def FourthOrderRKMethod(t, y, h):
         fy.append((b1 * k1[i]) + (b2 * k2[i]) + (b3 * k3[i]) + (b4 * k4[i]))
 
     return fy
-
-def optimize(f):
-    if (f == E2):
-        alpha = [0.1]
-    elif(f == E3):
-        if (case == 1):
-            alpha = [0.1, 0.1]
-        elif ((case == 2) or (case == 3)):
-            alpha = [0.1]
-    elif(f == E4):
-        if (case == 1):
-            alpha = [0.1, 0.1]
-        elif ((case == 2) or (case == 3) or (case == 4) or (case == 5)):
-            alpha = [0.1]
-
-    res = scope.minimize(f, alpha)
-    config.log.info("Optimize Result:", res)
-    return res.x
-
-def E2(alpha):
-    b = [1 - (1 / (2 * alpha[0])), 1 / (2 * alpha[0])]
-    c = [0, alpha[0]]
-    A = [[0, 0], [alpha[0], 0]]
-
-    csq = [c[0] ** 2, c[1] ** 2]
-    bcsq = (b[0] * csq[0]) + (b[1] * csq[1])
-    Ac = [(A[0][0] * c[0]) + (A[0][1] * c[1]),(A[1][0] * c[0]) + (A[1][1] * c[1])]
-    bAc = (b[0] * Ac[0]) + (b[1] * Ac[1])
-    result = (((1/2) * (bcsq - (1/3))) ** 2) + ((bAc - (1/6)) ** 2)
-
-    return result
