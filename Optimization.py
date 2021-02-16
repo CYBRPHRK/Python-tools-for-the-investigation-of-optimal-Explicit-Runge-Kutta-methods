@@ -7,10 +7,7 @@ def optimize(f):
     if (f == E2):
         alpha = [0.1]
     elif(f == E3):
-        if (case == 1):
-            alpha = [0.01, 0.01]
-        elif ((case == 2) or (case == 3)):
-            alpha = [0.01]
+        alpha = [0.01, 0.01]
     elif(f == E4):
         if (case == 1):
             alpha = [0.1, 0.1]
@@ -23,30 +20,14 @@ def optimize(f):
 def f1(x):
     return (x**2) + 2
 
-def setValuesForThirdOrder(alpha):
-    if (case == 1):
-        c2 = alpha[0]
-        c3 = alpha[1]
-        b1 = (2 - (3 * (c2 + c3)) + (6 * c2 * c3)) / (6 * c2 * c3)
-        b2 = (c3 - (2/3)) / (2 * c2 * (c3 - c2))
-        b3 = ((2/3) - c2) / (2 * c3 * (c3 - c2))
-        a31 = (c3 * (c3 - (3 * c2) + (3 * c2 * c2))) / (c2 * ((3 * c2) - 2))
-        a32 = (c3 * (c2 - c3)) / (c2 * ((3 * c2) - 2))
-    elif (case == 2):
-        c2 = 2/3
-        c3 = 0
-        b3 = alpha[0]
-        b1 = (1/4) - b3
-        b2 = 3/4
-        a31 = -1 / (4 * b3)
-        a32 = 1 / (4 * b3)
-    else:
-        c2 = c3 = 2/3
-        b3 = alpha[0]
-        b1 = 1/4
-        b2 = (3/4) - b3
-        a31 = ((8 * b3) - 3) / (12 * b3)
-        a32 = 1 / (4 * b3)
+def setValuesForThirdOrderCase1(alpha):
+    c2 = alpha[0]
+    c3 = alpha[1]
+    b1 = (2 - (3 * (c2 + c3)) + (6 * c2 * c3)) / (6 * c2 * c3)
+    b2 = (c3 - (2/3)) / (2 * c2 * (c3 - c2))
+    b3 = ((2/3) - c2) / (2 * c3 * (c3 - c2))
+    a31 = (c3 * (c3 - (3 * c2) + (3 * c2 * c2))) / (c2 * ((3 * c2) - 2))
+    a32 = (c3 * (c2 - c3)) / (c2 * ((3 * c2) - 2))
 
     return c2, c3, b1, b2, b3, a31, a32
 
@@ -64,16 +45,10 @@ def E2(alpha):
     return result
 
 def E3(alpha):
-    if (case == 1):
-        if ((alpha[0] == 0) or (alpha[0] == 2/3) or (alpha[1] == 0) or (alpha[0] == alpha[1])):
-            print (inf)
-            return inf
-    elif (alpha[0] == 0):
-        print (inf)
-        return inf
-
-    print (alpha)
-    c2, c3, b1, b2, b3, a31, a32 = setValuesForThirdOrder(alpha)
+    if ((alpha[0] == 0) or (alpha[0] == 2/3) or (alpha[1] == 0) or (alpha[0] == alpha[1])):
+        return 1
+    
+    c2, c3, b1, b2, b3, a31, a32 = setValuesForThirdOrderCase1(alpha)
 
     c = [0, c2, c3]
     b = [b1, b2, b3]
@@ -117,8 +92,6 @@ def E3(alpha):
 def E4(alpha):
     return 0
 
-case = 1
-
-#optimize(E3)
+optimize(E3)
 
 #print (E3([0.5, 0.75]))
