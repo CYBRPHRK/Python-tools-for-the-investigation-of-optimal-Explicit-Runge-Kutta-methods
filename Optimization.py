@@ -44,20 +44,14 @@ def E2(alpha):
 
     return result
 
-def E3(alpha):
-    if ((alpha[0] == 0) or (alpha[0] == 2/3) or (alpha[1] == 0) or (alpha[0] == alpha[1])):
-        return 1
-    
-    c2, c3, b1, b2, b3, a31, a32 = setValuesForThirdOrderCase1(alpha)
-
-    c = [0, c2, c3]
-    b = [b1, b2, b3]
-    A = [[0, 0, 0],[c2, 0, 0],[a31, a32, 0]]
-
+def E3Eq1(c, b, A):
     #For Equation 1, find b*c^3
     ccube = [c[0] ** 3, c[1] ** 3, c[2] ** 3]
     bccube = (b[0] * ccube[0]) + (b[1] * ccube[1]) + (b[2] * ccube[2])
 
+    return ((1/6) * (bccube - (1/4)))
+
+def E3Eq2(c, b, A):
     #For Equation 2, find b*c*A*c
     bc = [(b[0] * c[0]), (b[1] * c[1]), (b[2] * c[2])]
     Ac = [((A[0][0] * c[0]) + (A[0][1] * c[1]) + (A[0][2] * c[2])),
@@ -65,6 +59,9 @@ def E3(alpha):
           ((A[2][0] * c[0]) + (A[2][1] * c[1]) + (A[2][2] * c[2]))]
     bcAc = (bc[0] * Ac[0]) + (bc[1] * Ac[1]) + (bc[2] * Ac[2])
 
+    return (bcAc - (1/8))
+
+def E3Eq3(c, b, A):
     #For Equation 3, find b*A*c^2
     csq = [c[0] ** 2, c[1] ** 2, c[2] ** 2]
     Acsq = [((A[0][0] * csq[0]) + (A[0][1] * csq[1]) + (A[0][2] * csq[2])),
@@ -72,6 +69,9 @@ def E3(alpha):
           ((A[2][0] * csq[0]) + (A[2][1] * csq[1]) + (A[2][2] * csq[2]))]
     bAcsq = (b[0] * Acsq[0]) + (b[1] * Acsq[1]) + (b[2] * Acsq[2])
 
+    return ((1/2) * (bAcsq - (1/12)))
+
+def E3Eq4(c, b, A):
     #For Equation 4, find b*A^2*c
     Asq = []
     for i in range (0, len(A)):
@@ -84,8 +84,32 @@ def E3(alpha):
           ((Asq[2][0] * c[0]) + (Asq[2][1] * c[1]) + (Asq[2][2] * c[2]))]
     bAsqc = (b[0] * Asqc[0]) + (b[1] * Asqc[1]) + (b[2] * Asqc[2])
 
+    return (bAsqc - (1/24))
+
+def E3(alpha):
+    if ((alpha[0] == 0) or (alpha[0] == 2/3) or (alpha[1] == 0) or (alpha[0] == alpha[1])):
+        return 1
+    
+    c2, c3, b1, b2, b3, a31, a32 = setValuesForThirdOrderCase1(alpha)
+
+    c = [0, c2, c3]
+    b = [b1, b2, b3]
+    A = [[0, 0, 0],[c2, 0, 0],[a31, a32, 0]]
+
+    #For Equation 1, find b*c^3
+    eq1 = E3Eq1(c, b, A)
+
+    #For Equation 2, find b*c*A*c
+    eq2 = E3Eq2(c, b, A)
+
+    #For Equation 3, find b*A*c^2
+    eq3 = E3Eq3(c, b, A)
+
+    #For Equation 4, find b*A^2*c
+    eq4 = E3Eq4(c, b, A)
+
     #E3^2
-    result = (((1/6) * (bccube - (1/4))) ** 2) + ((bcAc - (1/8)) ** 2) + (((1/2) * (bAcsq - (1/12))) ** 2) + ((bAsqc - (1/24)) ** 2)
+    result = (eq1 ** 2) + (eq2 ** 2) + (eq3 ** 2) + (eq4 ** 2)
 
     return result
 
