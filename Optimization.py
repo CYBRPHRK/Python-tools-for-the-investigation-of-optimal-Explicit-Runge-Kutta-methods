@@ -378,8 +378,16 @@ def initializeOptimizer(choice):
         optimize(E3)
     elif (choice == 3):
         case = chooseE4Case()
-        log.info("Optimizing E4 with case: ", case)
-        optimize(E4)
+        if ((case < 1) or (case > 5)):
+            log.info("Invalid case: ", case)
+            initializeOptimizer(choice)
+        else:
+            log.info("Optimizing E4 with case: ", case)
+            optimize(E4)
+    else:
+        print ("Invalid choice. Please try again.")
+        log.info("Invalid choice: ", choice)
+        initializeOptimizer(displayMenu())
 
 log = logger.Logger("Optimization Log")
 initializeOptimizer(displayMenu())
