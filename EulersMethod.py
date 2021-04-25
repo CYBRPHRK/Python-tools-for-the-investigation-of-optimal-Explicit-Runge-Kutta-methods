@@ -19,6 +19,7 @@ def eulersMethod(steps):
     tt = [t]
     yy = [y[:]]
     ee = []
+    ffy = []
     
     while (t < tfinal):
         #fy = formula(t, y[:])
@@ -28,13 +29,15 @@ def eulersMethod(steps):
         t = t + h
         tt.append(t)
         yy.append(y[:])
+        ffy.append(fy[:])
+    config.t.append(tt[:])
+    config.y.append(yy[:])
+    config.f.append(ffy[:])
     
     for j in range(0, len(yy)):
         e = f.formulaExact(tt[j], yy[j])
         for i in range (0, len(e)):
-            #print ("In")
             e[i] = abs(e[i])
-        #print (e)
         ee.append(e[:])
     return ee, tt, yy
 
@@ -68,20 +71,23 @@ def methodAccuracyRatio(orders):
         orders[3][j]['RelError'] = (orders[3][j].get("ee[" + str(j) + "]")) / minError
         
         minError = min(orders[4][j].get("ee[" + str(j) + "]"), orders[5][j].get("ee[" + str(j) + "]"),
-                       orders[6][j].get("ee[" + str(j) + "]"), orders[7][j].get("ee[" + str(j) + "]"))
+                       orders[6][j].get("ee[" + str(j) + "]"), orders[7][j].get("ee[" + str(j) + "]"),
+                       orders[8][j].get("ee[" + str(j) + "]"))
         orders[4][j]['RelError'] = (orders[4][j].get("ee[" + str(j) + "]")) / minError
         orders[5][j]['RelError'] = (orders[5][j].get("ee[" + str(j) + "]")) / minError
         orders[6][j]['RelError'] = (orders[6][j].get("ee[" + str(j) + "]")) / minError
         orders[7][j]['RelError'] = (orders[7][j].get("ee[" + str(j) + "]")) / minError
-
-        minError = min(orders[8][j].get("ee[" + str(j) + "]"), orders[9][j].get("ee[" + str(j) + "]"),
-                       orders[10][j].get("ee[" + str(j) + "]"), orders[11][j].get("ee[" + str(j) + "]"),
-                       orders[12][j].get("ee[" + str(j) + "]"))
         orders[8][j]['RelError'] = (orders[8][j].get("ee[" + str(j) + "]")) / minError
+
+        minError = min(orders[9][j].get("ee[" + str(j) + "]"), orders[10][j].get("ee[" + str(j) + "]"),
+                       orders[11][j].get("ee[" + str(j) + "]"), orders[12][j].get("ee[" + str(j) + "]"),
+                       orders[13][j].get("ee[" + str(j) + "]"), orders[14][j].get("ee[" + str(j) + "]"))
         orders[9][j]['RelError'] = (orders[9][j].get("ee[" + str(j) + "]")) / minError
         orders[10][j]['RelError'] = (orders[10][j].get("ee[" + str(j) + "]")) / minError
         orders[11][j]['RelError'] = (orders[11][j].get("ee[" + str(j) + "]")) / minError
         orders[12][j]['RelError'] = (orders[12][j].get("ee[" + str(j) + "]")) / minError
+        orders[13][j]['RelError'] = (orders[13][j].get("ee[" + str(j) + "]")) / minError
+        orders[14][j]['RelError'] = (orders[14][j].get("ee[" + str(j) + "]")) / minError
 
     for x in orders:
         for y in x:

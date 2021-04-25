@@ -59,14 +59,9 @@ def specificODEAllMethods():
     while(methodNumber < 10):
         case = i
         methodInfo = "methodNumber: " + str(methodNumber)
-        if (methodNumber == 7):
-            case = case + 1
+        if (methodNumber == 7) or (methodNumber == 9):
             methodInfo = methodInfo + " Case: " + str(case)
-        elif (methodNumber == 9):
-            if (i != 1):
-                case = case + 1
 
-            methodInfo = methodInfo + " Case: " + str(case)
         config.file.write(methodInfo, end='')
         m.setMethodValues(methodNumber, True, case)
         j = 1
@@ -81,7 +76,7 @@ def specificODEAllMethods():
         if ((methodNumber != 7) and (methodNumber != 9)):
             methodNumber += 1
         else:
-            if (((methodNumber == 7) and (i == 2)) or ((methodNumber == 9) and (i == 4))):
+            if (((methodNumber == 7) and (i == 3)) or ((methodNumber == 9) and (i == 5))):
                 methodNumber += 1
                 i = 1
             else:

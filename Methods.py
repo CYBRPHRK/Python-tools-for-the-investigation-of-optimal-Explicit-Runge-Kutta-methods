@@ -22,15 +22,15 @@ def setMethodValues(mname, auto, caseNumber=None):
     global methodNumber, case
     
     methodNumber = int(mname)
-    if ((methodNumber < 1) and (methodNumber > 8)):
-        print ("No Method with that number.")
-        exit()
-
-    if (auto):
-        case = caseNumber
-        autoChooseCase()
+    if ((methodNumber < 1) or (methodNumber > 9)):
+        print ("No Method with that number.\n")
+        displayMethods()
     else:
-        userChooseCase()
+        if (auto):
+            case = caseNumber
+            autoChooseCase()
+        else:
+            userChooseCase()
 
 def autoChooseCase():
     config.log.info("autoChooseCase() started")
@@ -40,23 +40,30 @@ def autoChooseCase():
         alpha = 2/3
         caseInfo = " alpha=" + str(alpha)
     elif (methodNumber == 7):
-        if (case == 2):
-            alpha = 1/4
+        if (case == 1):
+            alpha = 0.49650476
+            beta = 0.75174749
+            caseInfo = " c2=" + str(alpha) + " c3=" + str(beta)
+        elif (case == 2):
+            alpha = 1/8
+            caseInfo = " b3=" + str(alpha)
         else:
-            alpha = 3/4
-        caseInfo = " b3=" + str(alpha)
+            alpha = 3/8
+            caseInfo = " b3=" + str(alpha)
     elif (methodNumber == 9):
         if (case == 1):
-            alpha = 1/3
-            beta = 2/3
+            alpha = 0.35774159
+            beta = 0.59148821
             caseInfo = " c2=" + str(alpha) + " c3=" + str(beta)
+        elif (case == 2):
+            alpha = 0.83316441
+            caseInfo = " b3=" + str(alpha)
+        elif ((case == 3) or (case == 4)):
+            alpha = 1/6
+            caseInfo = " b" + str(case) + "="+ str(alpha)
         else:
-            if ((case == 3) or (case == 4)):
-                alpha = 1/6
-                caseInfo = " b" + str(case) + "="+ str(alpha)
-            else:
-                alpha = 1
-                caseInfo = " c2=" + str(alpha)
+            alpha = 1
+            caseInfo = " c2=" + str(alpha)
     config.file.write(caseInfo)
 
 def userChooseCase():
