@@ -6,8 +6,8 @@ formulaNumber = 0
 
 '''
 Name: displayFormulas
-Desciption: A function to get the formula number along
-            with the respective values.
+Description: A function to get the formula number along
+                with the respective values.
 Parameters:
         None
 Returns:
@@ -31,7 +31,7 @@ def displayFormulas():
 
 '''
 Name: displayFormulasOnly
-Desciption: A function to get the formula number.
+Description: A function to get the formula number.
 Parameters:
         None
 Returns:
@@ -54,8 +54,8 @@ def displayFormulasOnly():
 
 '''
 Name: setFormulaValues
-Desciption: A function to set formula number and the
-            respective values for the formulas accordingly.
+Description: A function to set formula number and the
+                respective values for the formulas accordingly.
 Parameters:
         fname   : fname has the formula number as well as the
                     respective values for the formulas to be used
@@ -96,9 +96,9 @@ def setFormulaValues(fname):
 
 '''
 Name: formula
-Desciption: A function to get the approximate values(0) of y
-            by calling the respective formula function
-            according to the formula number.
+Description: A function to get the approximate values(0) of y
+                by calling the respective formula function
+                according to the formula number.
 Parameters:
         t   : The value of t after a certain steps
         y   : The list of values of y at step t
@@ -130,9 +130,9 @@ def formula(t, y):
 
 '''
 Name: formulaExact
-Desciption: A function to get the exact values(1) of y
-            by calling the respective formula function
-            according to the formula number.
+Description: A function to get the exact values(1) of y
+                by calling the respective formula function
+                according to the formula number.
 Parameters:
         t   : The value of t after a certain steps
         y   : The list of values of y at step t
