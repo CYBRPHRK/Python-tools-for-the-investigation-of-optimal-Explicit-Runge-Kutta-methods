@@ -12,7 +12,9 @@ def optimize(f):
     elif(f == E4):
         if (case == 1):
             alpha = [0.1, 0.2]
-        elif ((case == 2) or (case == 3) or (case == 4) or (case == 5)):
+        elif (case == 3):
+            alpha = [-0.1]
+        elif ((case == 2) or (case == 4) or (case == 5)):
             alpha = [0.1]
             
     log.info("alpha: ", alpha)
