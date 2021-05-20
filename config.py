@@ -12,3 +12,6 @@ y = []
 
 # Object to store the list of lists of function values for Hermite interpolation
 f = []
+
+# Object to store the list of function values per Eulers Method call
+ffy = []

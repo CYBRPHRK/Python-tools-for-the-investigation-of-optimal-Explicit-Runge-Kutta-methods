@@ -161,3 +161,37 @@ def formulaExact(t, y):
         return s.TestF8(1, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(1, t, y)
+
+'''
+Name: error
+Description: A function to get the error values(1) at t with
+                a given y by calling the respective formula
+                function according to the formula number.
+Parameters:
+        t   : The value of t after a certain steps
+        y   : The list of values of y at step t
+Returns:
+        e  : The list of error values(1) with a given y
+                    from the respective formula function
+                    for the step t
+'''
+def error(t, y):
+    config.log.info("formulaExact() started")
+    if (formulaNumber == 1):
+        return s.simple(2, t, y)
+    elif (formulaNumber == 2):
+        return y[:]
+    elif (formulaNumber == 3):
+        return s.simple_sys(2, t, y)
+    elif (formulaNumber == 4):
+        return s.TestF4(2, t, y)
+    elif (formulaNumber == 5):
+        return s.TestF5(2, t, y)
+    elif (formulaNumber == 6):
+        return s.TestF6(2, t, y)
+    elif (formulaNumber == 7):
+        return s.TestF7(2, t, y)
+    elif (formulaNumber == 8):
+        return s.TestF8(2, t, y)
+    elif (formulaNumber == 9):
+        return s.TestF9(2, t, y)

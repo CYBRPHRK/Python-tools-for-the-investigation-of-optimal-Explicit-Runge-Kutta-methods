@@ -4,13 +4,13 @@ import Methods as m
 import FileIO.FileIO as FileIO
 import config
 import Logger.Logger as log
+import HermiteInterpolation as hi
 #import bokeh.plotting as bp
 
 def displayMenu():
     config.log.info("displayMenu() started")
     print ("1. Specific ODE on Specific Method")
     print ("2. Specific ODE on All Methods and Export in an file")
-    print ("3. Analyze the Computations from a file")
     choice = input("Enter your choice: ")
     config.log.info("choice:", choice)
     print ("")
@@ -21,8 +21,6 @@ def chooseMenuOption(choice):
         specificODESpecificMethod()
     elif (choice == 2):
         specificODEAllMethods()
-    elif (choice == 3):
-        computationsAnalysis()
     else:
         config.log.error("Invalid Choice.")
         print ("Invalid Choice.\n")
@@ -83,28 +81,20 @@ def specificODEAllMethods():
                 i += 1
     em.methodAccuracyRatio(orders)
 
-'''
-def computationsAnalysis():
-    fnumber = f.displayFormulasOnly()
-    config.file = FileIO.FileIO("Test Results/F" + str(fnumber) + ".txt", "r")
-
-    # To stop the function from proceeding if the file is not created, return nothing
-    if not (config.file.isCreated()): return
-
-    f.setFormulaValues(config.file.readLine())
-    data = config.file.readLine()
-    while (data != ''):
-        if (data != '\n'):
-            data = data.split()
-            if (data[0] == 'methodNumber:'):
-                methodNumber = data[1]
-            elif (data[0].startswith('ee')):
-                print (data)
-        data = config.file.readLine()
-'''
-
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())
+
+# For Full test
+for i in range (0, len(config.t)):
+    u, e = hi.hermite(config.t[i], config.y[i], config.f[i])
+    d = hi.defect(config.t[i], config.y[i], config.f[i])
+    print ("\tu\t\t\tf\t\t\td")
+    for j in range (0, len(u)):
+        print ("Step:", j+1)
+        print ("t =", config.t[i][j])
+        for k in range (0, len(u[i])):
+            print (u[j][k], "\t", e[j][k], "\t", d[j][k])
+
 del config.file
 del config.log
 

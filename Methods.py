@@ -144,10 +144,12 @@ def method(t, y, h):
 
 def forwardEulersMethod(t, y):
     fy = f.formula(t, y[:])
+    config.ffy.append(fy)
     return fy
 
 def explicitMidpointMethod(t, y, h):
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + ((h/2) * k1[i]))
@@ -157,6 +159,7 @@ def explicitMidpointMethod(t, y, h):
 
 def HeunsSecondOrderMethod(t, y, h):
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * k1[i]))
@@ -170,6 +173,7 @@ def HeunsSecondOrderMethod(t, y, h):
 def secondOrderRKMethod(t, y, h):
     global alpha
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (alpha * k1[i])))
@@ -189,6 +193,7 @@ def HeunsThirdOrderMethod(t, y, h):
     a31 = 0
     a32 = 2/3
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
 
     yn = []
     for i in range (0, len(k1)):
@@ -216,6 +221,7 @@ def RalstonsThirdOrderMethod(t, y, h):
     a32 = 3/4
     
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
 
     yn = []
     for i in range (0, len(k1)):
@@ -275,6 +281,7 @@ def thirdOrderRKMethod(t, y, h):
     print ("a32 =", a32)'''
 
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     
     yn = []
     for i in range (0, len(k1)):
@@ -294,6 +301,7 @@ def thirdOrderRKMethod(t, y, h):
 
 def RK4Method(t, y, h):
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + ((h / 2) * k1[i]))
@@ -381,20 +389,8 @@ def FourthOrderRKMethod(t, y, h):
         b3 = 2/3
         b4 = 1/6
 
-    '''print ("\nc2 =", c2)
-    print ("c3 =", c3)
-    print ("c4 =", c4)
-    print ("b1 =", b1)
-    print ("b2 =", b2)
-    print ("b3 =", b3)
-    print ("b4 =", b4)
-    print ("a31 =", a31)
-    print ("a32 =", a32)
-    print ("a41 =", a41)
-    print ("a42 =", a42)
-    print ("a43 =", a43)'''
-
     k1 = f.formula(t, y[:])
+    config.ffy.append(k1)
     
     yn = []
     for i in range (0, len(k1)):

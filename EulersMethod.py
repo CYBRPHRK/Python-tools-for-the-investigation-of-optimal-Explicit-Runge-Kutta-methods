@@ -19,23 +19,22 @@ def eulersMethod(steps):
     tt = [t]
     yy = [y[:]]
     ee = []
-    ffy = []
+    config.ffy = []
     
     while (t < tfinal):
-        #fy = formula(t, y[:])
         fy = m.method(t, y[:], h)
         for i in range(0, len(y)):
             y[i] = y[i] + (h * fy[i])
         t = t + h
         tt.append(t)
         yy.append(y[:])
-        ffy.append(fy[:])
+    m.method(t, y[:], h)
     config.t.append(tt[:])
     config.y.append(yy[:])
-    config.f.append(ffy[:])
+    config.f.append(config.ffy[:])
     
     for j in range(0, len(yy)):
-        e = f.formulaExact(tt[j], yy[j])
+        e = f.error(tt[j], yy[j])
         for i in range (0, len(e)):
             e[i] = abs(e[i])
         ee.append(e[:])
