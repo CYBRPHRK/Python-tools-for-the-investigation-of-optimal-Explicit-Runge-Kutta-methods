@@ -5,7 +5,6 @@ import FileIO.FileIO as FileIO
 import config
 import Logger.Logger as log
 import HermiteInterpolation as hi
-#import bokeh.plotting as bp
 
 def displayMenu():
     config.log.info("displayMenu() started")
@@ -83,17 +82,6 @@ def specificODEAllMethods():
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())
-
-# For Full test
-for i in range (0, len(config.t)):
-    u, e = hi.hermite(config.t[i], config.y[i], config.f[i])
-    d = hi.defect(config.t[i], config.y[i], config.f[i])
-    print ("\tu\t\t\tf\t\t\td")
-    for j in range (0, len(u)):
-        print ("Step:", j+1)
-        print ("t =", config.t[i][j])
-        for k in range (0, len(u[i])):
-            print (u[j][k], "\t", e[j][k], "\t", d[j][k])
 
 del config.file
 del config.log

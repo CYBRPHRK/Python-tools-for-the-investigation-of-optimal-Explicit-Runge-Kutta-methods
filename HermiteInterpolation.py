@@ -1,4 +1,6 @@
+import bokeh.plotting as bp
 import Function as f
+import config
 
 '''
 Names: h00(t), h10(t), h01(t) and h11(t)
@@ -101,6 +103,22 @@ def defect(tt, yy, ffy):
             d_i.append(d)
         delta.append(d_i)
     return delta
+
+def displayResults():
+    # For Full test
+    for i in range (0, len(config.t)):
+        u, f = hermite(config.t[i], config.y[i], config.f[i])
+        d = defect(config.t[i], config.y[i], config.f[i])
+        print ("\tu\t\t\tf\t\t\td")
+        for j in range (0, len(u)):
+            print ("Step:", j+1)
+            print ("t =", config.t[i][j])
+            for k in range (0, len(u[i])):
+                print (u[j][k], "\t", f[j][k], "\t", d[j][k])
+    config.t = []
+    config.y = []
+    config.f = []
+
 def test():
     print ("h00(0) = " + str(h00(0)) + ", h00(1) = " + str(h00(1)) + ", h00'(0) = " + str(h00_d(0)) + ", h00'(1) = " + str(h00_d(1)))
     print ("h10(0) = " + str(h10(0)) + ", h10(1) = " + str(h10(1)) + ", h10'(0) = " + str(h10_d(0)) + ", h10'(1) = " + str(h10_d(1)))
