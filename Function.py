@@ -75,108 +75,49 @@ def setFormulaValues(fname):
 
 '''
 Name: formula
-Description: A function to get the approximate values(0) of y
-                by calling the respective formula function
-                according to the formula number.
+Description: A function to get the:
+                i = 0: approximate values of y
+                i = 1: exact values of y
+                i = 2: error values at t with a given y
+
+             by calling the respective formula function
+             according to the formula number.
 Parameters:
         t   : The value of t after a certain steps
         y   : The list of values of y at step t
 Returns:
-        y[t+h]  : The list of approximate values of y from the
-                    respective formula function for the next
-                    step t + h
+        for i = 0:
+            y[t+h]  : The list of approximate values of y from
+                      the respective formula function for the
+                      next step t + h
+        for i = 1:
+            y[t]    : The list of exact values of y from the
+                      respective formula function for the
+                      step t
+        for i = 2:
+            e       : The list of error values with a given y
+                      from the respective formula function
+                      for the step t
 '''
-def formula(t, y):
+def formula(i, t, y):
     config.log.info("formula() started")
     if (formulaNumber == 1):
-        return s.simple(0, t, y)
+        return s.simple(i, t, y)
     elif (formulaNumber == 2):
-        return s.predatorPrey(t, y)
+        return s.predatorPrey(i, t, y)
     elif (formulaNumber == 3):
-        return s.simple_sys(0, t, y)
+        return s.simple_sys(i, t, y)
     elif (formulaNumber == 4):
-        return s.TestF4(0, t, y)
+        return s.TestF4(i, t, y)
     elif (formulaNumber == 5):
-        return s.TestF5(0, t, y)
+        return s.TestF5(i, t, y)
     elif (formulaNumber == 6):
-        return s.TestF6(0, t, y)
+        return s.TestF6(i, t, y)
     elif (formulaNumber == 7):
-        return s.TestF7(0, t, y)
+        return s.TestF7(i, t, y)
     elif (formulaNumber == 8):
-        return s.TestF8(0, t, y)
+        return s.TestF8(i, t, y)
     elif (formulaNumber == 9):
-        return s.TestF9(0, t, y)
+        return s.TestF9(i, t, y)
     elif (formulaNumber == 10):
-        return s.sampleCOVID19Model(0, t, y)
-
-'''
-Name: formulaExact
-Description: A function to get the exact values(1) of y
-                by calling the respective formula function
-                according to the formula number.
-Parameters:
-        t   : The value of t after a certain steps
-        y   : The list of values of y at step t
-Returns:
-        y[t]  : The list of exact values of y from the
-                    respective formula function for the
-                    step t
-'''
-def formulaExact(t, y):
-    config.log.info("formulaExact() started")
-    if (formulaNumber == 1):
-        return s.simple(1, t, y)
-    elif (formulaNumber == 2):
-        return y[:]
-    elif (formulaNumber == 3):
-        return s.simple_sys(1, t, y)
-    elif (formulaNumber == 4):
-        return s.TestF4(1, t, y)
-    elif (formulaNumber == 5):
-        return s.TestF5(1, t, y)
-    elif (formulaNumber == 6):
-        return s.TestF6(1, t, y)
-    elif (formulaNumber == 7):
-        return s.TestF7(1, t, y)
-    elif (formulaNumber == 8):
-        return s.TestF8(1, t, y)
-    elif (formulaNumber == 9):
-        return s.TestF9(1, t, y)
-    elif (formulaNumber == 10):
-        return s.sampleCOVID19Model(1, t, y)
-
-'''
-Name: error
-Description: A function to get the error values(1) at t with
-                a given y by calling the respective formula
-                function according to the formula number.
-Parameters:
-        t   : The value of t after a certain steps
-        y   : The list of values of y at step t
-Returns:
-        e  : The list of error values(1) with a given y
-                    from the respective formula function
-                    for the step t
-'''
-def error(t, y):
-    config.log.info("formulaExact() started")
-    if (formulaNumber == 1):
-        return s.simple(2, t, y)
-    elif (formulaNumber == 2):
-        return y[:]
-    elif (formulaNumber == 3):
-        return s.simple_sys(2, t, y)
-    elif (formulaNumber == 4):
-        return s.TestF4(2, t, y)
-    elif (formulaNumber == 5):
-        return s.TestF5(2, t, y)
-    elif (formulaNumber == 6):
-        return s.TestF6(2, t, y)
-    elif (formulaNumber == 7):
-        return s.TestF7(2, t, y)
-    elif (formulaNumber == 8):
-        return s.TestF8(2, t, y)
-    elif (formulaNumber == 9):
-        return s.TestF9(2, t, y)
-    elif (formulaNumber == 10):
-        return s.sampleCOVID19Model(2, t, y)
+        return s.sampleCOVID19Model(i, t, y)

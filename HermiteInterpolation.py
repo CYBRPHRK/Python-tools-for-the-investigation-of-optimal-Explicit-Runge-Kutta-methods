@@ -79,9 +79,9 @@ def hermite(tt, yy, ffy):
         # For the first derivative value, u_0'(t_0)
         u_d.append(((yy[0][k] / h) * h00_d(0)) + (ffy[0][k] * h10_d(0)) + ((yy[1][k] / h) * h01_d(0)) + (ffy[1][k] * h11_d(0)))
     # Here fu = f(t_0, u_0(t_0))
-    fu = f.formula(tt[0], u[:])
+    fu = f.formula(0, tt[0], u[:])
     # Exact value at t_0
-    fe = f.formulaExact(tt[0], u[:])
+    fe = f.formula(1, tt[0], u[:])
 
     # d_0(t_0) = u_0'(t_0) - f(t_0, u_0(t_0))
     for k in range (0, len(u)):
@@ -109,10 +109,10 @@ def hermite(tt, yy, ffy):
                 u_d.append(((yy[i][k] / h) * h00_d(theta)) + (ffy[i][k] * h10_d(theta)) + ((yy[i + 1][k] / h) * h01_d(theta)) + (ffy[i + 1][k] * h11_d(theta)))
 
             # Here fu = f(t_i + (theta * h_i), u_i(t_i + (theta * h_i)))
-            fu = f.formula((tt[i] + (theta * h)), u[:])
+            fu = f.formula(0, (tt[i] + (theta * h)), u[:])
 
             # Exact value at (t_i + (theta * h_i))
-            fe = f.formulaExact((tt[i] + (theta * h)), u[:])
+            fe = f.formula(1, (tt[i] + (theta * h)), u[:])
 
             # d_i(t_i + (theta * h_i)) = u_i'(t_i + (theta * h_i)) - f(t_i + (theta * h_i), u_i(t_i + (theta * h_i)))
             for k in range (0, len(u)):

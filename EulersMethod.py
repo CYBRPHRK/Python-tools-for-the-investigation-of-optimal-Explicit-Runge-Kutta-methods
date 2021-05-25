@@ -34,7 +34,7 @@ def eulersMethod(steps):
     config.f.append(config.ffy[:])
     
     for j in range(0, len(yy)):
-        e = f.error(tt[j], yy[j])
+        e = f.formula(2, tt[j], yy[j])
         for i in range (0, len(e)):
             e[i] = abs(e[i])
         ee.append(e[:])

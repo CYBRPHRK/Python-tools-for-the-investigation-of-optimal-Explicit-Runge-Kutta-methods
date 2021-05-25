@@ -143,27 +143,27 @@ def method(t, y, h):
         return FourthOrderRKMethod(t, y, h)
 
 def forwardEulersMethod(t, y):
-    fy = f.formula(t, y[:])
+    fy = f.formula(0, t, y[:])
     config.ffy.append(fy)
     return fy
 
 def explicitMidpointMethod(t, y, h):
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + ((h/2) * k1[i]))
-    fy = f.formula((t + (h/2)), yn[:])
+    fy = f.formula(0, (t + (h/2)), yn[:])
 
     return fy
 
 def HeunsSecondOrderMethod(t, y, h):
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * k1[i]))
-    k2 = f.formula((t + h), yn[:])
+    k2 = f.formula(0, (t + h), yn[:])
     fy = []
     for i in range (0, len(k2)):
         fy.append((1/2) * (k1[i] + k2[i]))
@@ -172,12 +172,12 @@ def HeunsSecondOrderMethod(t, y, h):
 
 def secondOrderRKMethod(t, y, h):
     global alpha
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (alpha * k1[i])))
-    k2 = f.formula((t + (alpha * h)), yn[:])
+    k2 = f.formula(0, (t + (alpha * h)), yn[:])
     fy = []
     for i in range (0, len(k1)):
         fy.append(((1 - (1/(2 * alpha))) * k1[i]) + ((1/(2 * alpha)) * k2[i]))
@@ -192,18 +192,18 @@ def HeunsThirdOrderMethod(t, y, h):
     b3 = 3/4
     a31 = 0
     a32 = 2/3
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
 
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (c2 * k1[i])))
-    k2 = f.formula((t + (c2 * h)), yn[:])
+    k2 = f.formula(0, (t + (c2 * h)), yn[:])
 
     yn.clear()
     for i in range (0, len(k2)):
         yn.append(y[i] + (h * ((a31 * k1[i]) + (a32 * k2[i]))))
-    k3 = f.formula((t + (c3 * h)), yn[:])
+    k3 = f.formula(0, (t + (c3 * h)), yn[:])
 
     fy = []
     for i in range (0, len(y)):
@@ -220,18 +220,18 @@ def RalstonsThirdOrderMethod(t, y, h):
     a31 = 0
     a32 = 3/4
     
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
 
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (c2 * k1[i])))
-    k2 = f.formula((t + (c2 * h)), yn[:])
+    k2 = f.formula(0, (t + (c2 * h)), yn[:])
 
     yn.clear()
     for i in range (0, len(k2)):
         yn.append(y[i] + (h * ((a31 * k1[i]) + (a32 * k2[i]))))
-    k3 = f.formula((t + (c3 * h)), yn[:])
+    k3 = f.formula(0, (t + (c3 * h)), yn[:])
 
     fy = []
     for i in range (0, len(y)):
@@ -280,18 +280,18 @@ def thirdOrderRKMethod(t, y, h):
     print ("a31 =", a31)
     print ("a32 =", a32)'''
 
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (c2 * k1[i])))
-    k2 = f.formula((t + (c2 * h)), yn[:])
+    k2 = f.formula(0, (t + (c2 * h)), yn[:])
 
     yn.clear()
     for i in range (0, len(k2)):
         yn.append(y[i] + (h * ((a31 * k1[i]) + (a32 * k2[i]))))
-    k3 = f.formula((t + (c3 * h)), yn[:])
+    k3 = f.formula(0, (t + (c3 * h)), yn[:])
 
     fy = []
     for i in range (0, len(y)):
@@ -300,20 +300,20 @@ def thirdOrderRKMethod(t, y, h):
     return fy
 
 def RK4Method(t, y, h):
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + ((h / 2) * k1[i]))
-    k2 = f.formula((t + (h / 2)), yn[:])
+    k2 = f.formula(0, (t + (h / 2)), yn[:])
     yn.clear()
     for i in range (0, len(k2)):
         yn.append(y[i] + ((h / 2) * k2[i]))
-    k3 = f.formula((t + (h / 2)), yn[:])
+    k3 = f.formula(0, (t + (h / 2)), yn[:])
     yn.clear()
     for i in range (0, len(k3)):
         yn.append(y[i] + (h * k3[i]))
-    k4 = f.formula((t + h), yn[:])
+    k4 = f.formula(0, (t + h), yn[:])
     fy = []
     for i in range (0, len(y)):
         fy.append((1/6) * (k1[i] + (2 * k2[i]) + (2 * k3[i]) + k4[i]))
@@ -389,23 +389,23 @@ def FourthOrderRKMethod(t, y, h):
         b3 = 2/3
         b4 = 1/6
 
-    k1 = f.formula(t, y[:])
+    k1 = f.formula(0, t, y[:])
     config.ffy.append(k1)
     
     yn = []
     for i in range (0, len(k1)):
         yn.append(y[i] + (h * (c2 * k1[i])))
-    k2 = f.formula((t + (c2 * h)), yn[:])
+    k2 = f.formula(0, (t + (c2 * h)), yn[:])
 
     yn.clear()
     for i in range (0, len(k2)):
         yn.append(y[i] + (h * ((a31 * k1[i]) + (a32 * k2[i]))))
-    k3 = f.formula((t + (c3 * h)), yn[:])
+    k3 = f.formula(0, (t + (c3 * h)), yn[:])
 
     yn.clear()
     for i in range (0, len(k3)):
         yn.append(y[i] + (h * ((a41 * k1[i]) + (a42 * k2[i]) + (a43 * k3[i]))))
-    k4 = f.formula((t + (c4 * h)), yn[:])
+    k4 = f.formula(0, (t + (c4 * h)), yn[:])
 
     fy = []
     for i in range (0, len(y)):
