@@ -1,5 +1,4 @@
 import Simple as s
-import PredatorPrey as pp
 import config
 
 formulaNumber = 0
@@ -25,32 +24,10 @@ def displayFormulas():
     print ("Test F7: f7 t tfinal y0")
     print ("Test F8: f8 t tfinal y0")
     print ("Test F9: f9 t tfinal y0 alpha")
+    print ("Sample COVID-19 Model: f10 t tfinal")
     fname = input("\nEnter the formula with values respectively (Use spaces between the values like shown above):\n")
     config.log.info("fname =", fname)
     return fname
-
-'''
-Name: displayFormulasOnly
-Description: A function to get the formula number.
-Parameters:
-        None
-Returns:
-        fnumber : returns the formula number provided by the user
-'''
-def displayFormulasOnly():
-    config.log.info("displayFormulasOnly() started")
-    print ("1. Simple")
-    print ("2. Predator Prey")
-    print ("3. Simple for System")
-    print ("4. Test F4")
-    print ("5. Test F5")
-    print ("6. Test F6")
-    print ("7. Test F7")
-    print ("8. Test F8")
-    print ("9. Test F9")
-    fnumber = input("\nEnter the formula number for the computational analysis:\n")
-    config.log.info("fnumber =", fnumber)
-    return fnumber
 
 '''
 Name: setFormulaValues
@@ -79,13 +56,15 @@ def setFormulaValues(fname):
     if(formulaNumber == 2):
         y0.append(data[3])
         y0.append(data[4])
-        pp.setConstants(data[5], data[6], data[7], data[8])
+        s.setConstants(data[5], data[6], data[7], data[8])
     elif (formulaNumber == 3):
         y0.append(data[3])
         y0.append(data[4])
     elif (formulaNumber == 9):
         y0.append(data[3])
-        s.setAlpha(data[4])
+        s.setConstants(data[4])
+    elif (formulaNumber == 10):
+        y0 = s.sampleCOVID19ModelInitializer()
     elif ((formulaNumber == 1) or ((formulaNumber >= 4) and (formulaNumber <= 8))):
         y0.append(data[3])
     else:
@@ -112,7 +91,7 @@ def formula(t, y):
     if (formulaNumber == 1):
         return s.simple(0, t, y)
     elif (formulaNumber == 2):
-        return pp.predatorPrey(t, y)
+        return s.predatorPrey(t, y)
     elif (formulaNumber == 3):
         return s.simple_sys(0, t, y)
     elif (formulaNumber == 4):
@@ -127,6 +106,8 @@ def formula(t, y):
         return s.TestF8(0, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(0, t, y)
+    elif (formulaNumber == 10):
+        return s.sampleCOVID19Model(0, t, y)
 
 '''
 Name: formulaExact
@@ -161,6 +142,8 @@ def formulaExact(t, y):
         return s.TestF8(1, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(1, t, y)
+    elif (formulaNumber == 10):
+        return s.sampleCOVID19Model(1, t, y)
 
 '''
 Name: error
@@ -195,3 +178,5 @@ def error(t, y):
         return s.TestF8(2, t, y)
     elif (formulaNumber == 9):
         return s.TestF9(2, t, y)
+    elif (formulaNumber == 10):
+        return s.sampleCOVID19Model(2, t, y)
