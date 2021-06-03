@@ -2,6 +2,7 @@ import Simple as s
 import config
 
 formulaNumber = 0
+exactExists = True
 
 '''
 Name: displayFormulas
@@ -45,7 +46,7 @@ Returns:
 '''
 def setFormulaValues(fname):
     config.log.info("setFormulaValues() started")
-    global formulaNumber
+    global formulaNumber, exactExists
     y0 = []
     data = fname.split()
     for i in range(1, len(data)):
@@ -54,6 +55,7 @@ def setFormulaValues(fname):
     formulaNumber = int (data[0][1:])
 
     if(formulaNumber == 2):
+        exactExists = False
         y0.append(data[3])
         y0.append(data[4])
         s.setConstants(data[5], data[6], data[7], data[8])
@@ -64,6 +66,7 @@ def setFormulaValues(fname):
         y0.append(data[3])
         s.setConstants(data[4])
     elif (formulaNumber == 10):
+        exactExists = False
         y0 = s.sampleCOVID19ModelInitializer()
     elif ((formulaNumber == 1) or ((formulaNumber >= 4) and (formulaNumber <= 8))):
         y0.append(data[3])

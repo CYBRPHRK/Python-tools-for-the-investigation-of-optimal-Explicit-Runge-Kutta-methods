@@ -68,7 +68,7 @@ def hermite(tt, yy, ffy):
     # To store all the u values computed
     uu = []
     # To store all the exact values at all the t values
-    ffu = []
+    ffe = []
     # To store all the defect values in variable 'delta'
     delta = []
 
@@ -80,8 +80,11 @@ def hermite(tt, yy, ffy):
         u_d.append(((yy[0][k] / h) * h00_d(0)) + (ffy[0][k] * h10_d(0)) + ((yy[1][k] / h) * h01_d(0)) + (ffy[1][k] * h11_d(0)))
     # Here fu = f(t_0, u_0(t_0))
     fu = f.formula(0, tt[0], u[:])
-    # Exact value at t_0
-    fe = f.formula(1, tt[0], u[:])
+    if (f.exactExists):
+        # Exact value at t_0
+        fe = f.formula(1, tt[0], u[:])
+        # Storing the value in the list named 'ffe'
+        ffe.append(fe)
 
     # d_0(t_0) = u_0'(t_0) - f(t_0, u_0(t_0))
     for k in range (0, len(u)):
@@ -90,7 +93,6 @@ def hermite(tt, yy, ffy):
     # Storing the values in their corresponding lists
     t.append(tt[0])
     uu.append(u)
-    ffu.append(fe)
     delta.append(d)
 
     # Performing hermite interpolation on all the intervals
@@ -111,8 +113,11 @@ def hermite(tt, yy, ffy):
             # Here fu = f(t_i + (theta * h_i), u_i(t_i + (theta * h_i)))
             fu = f.formula(0, (tt[i] + (theta * h)), u[:])
 
-            # Exact value at (t_i + (theta * h_i))
-            fe = f.formula(1, (tt[i] + (theta * h)), u[:])
+            if (f.exactExists):
+                # Exact value at (t_i + (theta * h_i))
+                fe = f.formula(1, (tt[i] + (theta * h)), u[:])
+                # Storing the value in the list named 'ffe'
+                ffe.append(fe)
 
             # d_i(t_i + (theta * h_i)) = u_i'(t_i + (theta * h_i)) - f(t_i + (theta * h_i), u_i(t_i + (theta * h_i)))
             for k in range (0, len(u)):
@@ -121,41 +126,49 @@ def hermite(tt, yy, ffy):
             # Storing the values in their corresponding lists
             t.append(tt[i] + (theta * h))
             uu.append(u)
-            ffu.append(fe)
             delta.append(d)
-    return t, uu, ffu, delta
+    return t, uu, ffe, delta
 
 def displayResults(reset=False):
     # For a full display of hermite interpolant 
     for i in range (0, len(config.t)):
-        t, u, f, d = hermite(config.t[i], config.y[i], config.f[i])
-        print ("i\t\t\tt\t\t\tu\t\t\tf\t\t\td")
-        for i in range (0, len(t)):
-            print (i+1, "\t", t[i], "\t", u[i], "\t", f[i], "\t", d[i])
+        t, u, fe, d = hermite(config.t[i], config.y[i], config.f[i])
+        if (f.exactExists):
+            print ("i\t\t\tt\t\t\tu\t\t\tf\t\t\td")
+            for i in range (0, len(t)):
+                print (i+1, "\t", t[i], "\t", u[i], "\t", fe[i], "\t", d[i])
+        else:
+            print ("i\t\t\tt\t\t\tu\t\t\td")
+            for i in range (0, len(t)):
+                print (i+1, "\t", t[i], "\t", u[i], "\t", d[i])
+        input("Press Enter to continue")
     if(reset):
         config.t = []
         config.y = []
         config.f = []
 
 def plotHermite():
-    t, u, f, d = hermite(config.t[len(config.t)-1], config.y[len(config.y)-1], config.f[len(config.f)-1])
+    t, u, fe, d = hermite(config.t[len(config.t)-1], config.y[len(config.y)-1], config.f[len(config.f)-1])
 
     # Creating lists to prepare them for plotting
     t_list = []
     u_list = []
-    f_list = []
+    if (f.exactExists):
+        f_list = []
     d_list = []
     for j in range (0, len(u[0])):
         t_list.append(t)
         u_list.append([])
-        f_list.append([])
+        if (f.exactExists):
+            f_list.append([])
         d_list.append([])
 
     # Preparing the lists for plotting
     for i in range (0, len(t)):
         for j in range (0, len(u[i])):
             u_list[j].append(u[i][j])
-            f_list[j].append(f[i][j])
+            if (f.exactExists):
+                f_list[j].append(fe[i][j])
             d_list[j].append(d[i][j])
 
     # Creating an object to create an HTML file for plotting
@@ -165,7 +178,10 @@ def plotHermite():
     p = bp.figure(plot_width = 1366, plot_height = 768)
 
     # Plotting the data
-    p.multi_line(t_list + t_list, u_list + f_list)
+    if (f.exactExists):
+        p.multi_line(t_list + t_list, u_list + f_list)
+    else:
+        p.multi_line(t_list, u_list)
 
     # Showing the data in the browser
     bp.show(p)

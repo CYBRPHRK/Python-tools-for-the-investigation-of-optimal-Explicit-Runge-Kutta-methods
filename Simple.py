@@ -1,7 +1,6 @@
 import math
 
 alpha = beta = gamma = delta = theta = 0
-exactExists = True
 
 def setConstants(a, b=None, c=None, d=None, e=None):
     global alpha, beta, gamma, delta, theta
@@ -25,8 +24,6 @@ def simple(i, t, y):
     delta = 1
 '''
 def predatorPrey(i, t, y):
-    global exactExists
-    exactExists = False
     # IVODE
     if (i == 0):
         return [((alpha * y[0]) - (beta * y[0] * y[1])), ((delta * y[0] * y[1]) - (gamma * y[1]))]
@@ -116,8 +113,6 @@ def sampleCOVID19ModelInitializer():
     return [theta-y03-y02, y02, y03, 0]
 
 def sampleCOVID19Model(i, t, y):
-    global exactExists
-    exactExists = False
     # IVODE
     if (i == 0):
         y1 = ((-beta * y[0] * y[2]) / theta) + (delta * theta) - (delta * y[0])

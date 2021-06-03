@@ -33,11 +33,19 @@ def specificODESpecificMethod():
 
     j = 1
     while(j <= 6):
-        ee, tt, yy = em.eulersMethod(j)
-        order = em.findOrder(ee, j)
-        for x in order:
-            print (em.dictToString(x))
-        print ()
+        if (f.exactExists):
+            ee, tt, yy = em.eulersMethod(j)
+            order = em.findOrder(ee, j)
+            for x in order:
+                print (em.dictToString(x))
+            print ()
+        else:
+            k = 0
+            tt, yy = em.eulersMethod(j)
+            for y in yy[len(yy) - 1]:
+                print ("Steps:", (2 ** (j * (-1))), "\ty[" + str(k) + "]:", y)
+                k += 1
+            print ()
         j = j + 1
 
 def specificODEAllMethods():
@@ -63,13 +71,22 @@ def specificODEAllMethods():
         m.setMethodValues(methodNumber, True, case)
         j = 1
         while(j <= 6):
-            ee, tt, yy = em.eulersMethod(j)
-            order = em.findOrder(ee, j)
-            for x in order:
-                config.file.write(em.dictToString(x))
-            config.file.write("")
+            if (f.exactExists):
+                ee, tt, yy = em.eulersMethod(j)
+                order = em.findOrder(ee, j)
+                for x in order:
+                    config.file.write(em.dictToString(x))
+                config.file.write("")
+            else:
+                k = 0
+                tt, yy = em.eulersMethod(j)
+                for y in yy[len(yy) - 1]:
+                    config.file.write("Steps: " + str(2 ** (j * (-1))) + "\ty[" + str(k) + "]: " + str(y))
+                    k += 1
+                config.file.write("")
             j = j + 1
-        orders.append(order)
+        if (f.exactExists):
+            orders.append(order)
         if ((methodNumber != 7) and (methodNumber != 9)):
             methodNumber += 1
         else:
@@ -78,7 +95,8 @@ def specificODEAllMethods():
                 i = 1
             else:
                 i += 1
-    em.methodAccuracyRatio(orders)
+    if (f.exactExists):
+        em.methodAccuracyRatio(orders)
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())

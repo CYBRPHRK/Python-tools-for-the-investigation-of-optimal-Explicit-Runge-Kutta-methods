@@ -32,13 +32,16 @@ def eulersMethod(steps):
     config.t.append(tt[:])
     config.y.append(yy[:])
     config.f.append(config.ffy[:])
-    
-    for j in range(0, len(yy)):
-        e = f.formula(2, tt[j], yy[j])
-        for i in range (0, len(e)):
-            e[i] = abs(e[i])
-        ee.append(e[:])
-    return ee, tt, yy
+
+    if (f.exactExists):
+        for j in range(0, len(yy)):
+            e = f.formula(2, tt[j], yy[j])
+            for i in range (0, len(e)):
+                e[i] = abs(e[i])
+            ee.append(e[:])
+        return ee, tt, yy
+    else:
+        return tt, yy
 
 def findOrder(ee, steps):
     global eeOld
