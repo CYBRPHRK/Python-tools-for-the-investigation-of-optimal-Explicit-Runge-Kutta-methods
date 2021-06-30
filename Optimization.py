@@ -241,7 +241,7 @@ def E4Eq5(c, b, A):
           ((A[3][0] * c[0]) + (A[3][1] * c[1]) + (A[3][2] * c[2]) + (A[3][3] * c[3]))]
 
     AcAc = [Ac[0] ** 2, Ac[1] ** 2, Ac[2] ** 2, Ac[3] ** 2]
-    bAcAc = (b[0] * AcAc[0] + b[1] * AcAc[1] + b[2] * AcAc[2] + b[3] * AcAc[3])
+    bAcAc = (b[0] * AcAc[0]) + (b[1] * AcAc[1]) + (b[2] * AcAc[2]) + (b[3] * AcAc[3])
 
     return ((1/2) * (bAcAc - (1/20)))
 
@@ -252,7 +252,7 @@ def E4Eq6(c, b, A):
               ((A[1][0] * ccube[0]) + (A[1][1] * ccube[1]) + (A[1][2] * ccube[2]) + (A[1][3] * ccube[3])),
               ((A[2][0] * ccube[0]) + (A[2][1] * ccube[1]) + (A[2][2] * ccube[2]) + (A[2][3] * ccube[3])),
               ((A[3][0] * ccube[0]) + (A[3][1] * ccube[1]) + (A[3][2] * ccube[2]) + (A[3][3] * ccube[3]))]
-    bAccube = (b[0] * Accube[0] + b[1] * Accube[1] + b[2] * Accube[2] + b[3] * Accube[3])
+    bAccube = (b[0] * Accube[0]) + (b[1] * Accube[1]) + (b[2] * Accube[2]) + (b[3] * Accube[3])
 
     return ((1/6) * (bAccube - (1/20)))
 
