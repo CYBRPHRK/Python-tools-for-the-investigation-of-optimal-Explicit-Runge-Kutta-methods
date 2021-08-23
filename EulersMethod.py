@@ -7,11 +7,41 @@ import config
 t0 = tf = 0
 eeOld = y0 = []
 
+'''
+Name: setInitialValues
+Description: This function sets the initial values for a method.
+Parameters:
+        t       : t is the initial time.
+        tfinal  : tfinal is the final time.
+        y       : y is the initial value for the given IVODE.
+Returns:    None
+'''
 def setInitialValues(t, tfinal, y):
     global t0, tf, y0
     t0, tf, y0 = t, tfinal, y[:]
 
+'''
+Name: eulerMethod
+Description: This function computes the approximate solution for an IVODE using a
+                given ERK method.
+Parameters:
+        steps   : steps is the parameter provided to compute the stepsize.
+Returns:
+        if (f.exactExists = True):
+            ee  : ee is the list of lists of errors in approximate numerical
+                    solutions for the IVODE.
+            tt  : tt is the list of points on the domain where the approximate
+                    numerical solution for the IVODE is computed.
+            yy  : yy is the list of approximate numerical solutions for the IVODE
+                    computed at points (tt) on the domain.
+        if (f.exactExists = False):
+            tt  : tt is the list of points on the domain where the approximate
+                    numerical solution for the IVODE is computed.
+            yy  : yy is the list of approximate numerical solutions for the IVODE
+                    computed at points (tt) on the domain.
+'''
 def eulersMethod(steps):
+    # Setting up all the initial values
     t = t0
     tfinal = tf
     y = y0[:]
@@ -20,7 +50,8 @@ def eulersMethod(steps):
     yy = [y[:]]
     ee = []
     config.ffy = []
-    
+
+    # Computing the approximate numerical solution
     while (t < tfinal):
         fy = m.method(t, y[:], h)
         for i in range(0, len(y)):
@@ -34,6 +65,7 @@ def eulersMethod(steps):
     config.f.append(config.ffy[:])
 
     if (f.exactExists):
+        # Computing the error
         for j in range(0, len(yy)):
             e = f.formula(2, tt[j], yy[j])
             for i in range (0, len(e)):
@@ -43,6 +75,18 @@ def eulersMethod(steps):
     else:
         return tt, yy
 
+'''
+Name: findOrder
+Description: This function computes the ratio of the errors and
+                order of convergence of a given ERK method.
+Parameters:
+        ee      : ee is the list of lists of errors in approximate numerical
+                    solutions for the IVODE.
+        steps   : steps is the parameter provided to compute the stepsize.
+Returns:
+        orders  : orders is the list of dictionaries which has error(s), stepsize,
+                    ratio of the errors and order of convergence of the method.
+'''
 def findOrder(ee, steps):
     global eeOld
     i = 0
@@ -50,7 +94,7 @@ def findOrder(ee, steps):
     for e in ee[len(ee) -1]:
         order = {}
         order["ee[" + str(i) + "]"] = e
-        order["Steps"] = math.pow(2, (steps * (-1)))
+        order["Stepsize"] = math.pow(2, (steps * (-1)))
         if (steps > 1):
             ratio = eeOld[i]/e
             order['eeOld/ee'] = ratio
@@ -63,8 +107,17 @@ def findOrder(ee, steps):
     eeOld = ee[len(ee) - 1]
     return orders
 
-def methodAccuracyRatio(orders):
-    config.file.write("Method Accuracy Ratios:")
+'''
+Name: relToMinError
+Description: This function computes the relative to minimum error for each order of
+                ERK method and print them in the results text file.
+Parameters:
+        orders  : orders is the list of dictionaries which has error(s), stepsize,
+                    ratio of the errors and order of convergence of the method.
+Returns:    None
+'''
+def relToMinError(orders):
+    config.file.write("Rel. To Min. Errors:")
     for j in range (0, len(orders[0])):
         minError = min(orders[1][j].get("ee[" + str(j) + "]"), orders[2][j].get("ee[" + str(j) + "]"),
                        orders[3][j].get("ee[" + str(j) + "]"))
@@ -96,18 +149,18 @@ def methodAccuracyRatio(orders):
             config.file.write(dictToString(y))
         config.file.write("")
 
+'''
+Name: dictToString
+Description: This function converts the data stored in a dictionary into string.
+Parameters:
+        dict    : dict is the dictionary in which the data is stored.
+Returns:
+        dictString  : dictString is the string converted from the dictonary.
+'''
 def dictToString(dict):
     dictString = ""
+    # Fetching data from the dictonary and saving it in the string
     for x in dict:
         dictString = dictString + x + ": " + str(dict.get(x)) + "\t"
+    # Returning the string after removing the extra whitespace
     return dictString.strip()
-
-#Depreciated
-def plotGraph(index, ee, tt, yy):
-    bp.output_file("Plot" + str(index) + ".html")
-
-    p = bp.figure(plot_width = 400, plot_height = 400)
-
-    p.multi_line([tt,tt],[yy,ee])
-
-    bp.show(p)

@@ -1,4 +1,4 @@
-import Simple as s
+import ivode as iv
 import config
 
 formulaNumber = 0
@@ -58,16 +58,16 @@ def setFormulaValues(fname):
         exactExists = False
         y0.append(data[3])
         y0.append(data[4])
-        s.setConstants(data[5], data[6], data[7], data[8])
+        iv.setConstants(data[5], data[6], data[7], data[8])
     elif (formulaNumber == 3):
         y0.append(data[3])
         y0.append(data[4])
     elif (formulaNumber == 9):
         y0.append(data[3])
-        s.setConstants(data[4])
+        iv.setConstants(data[4])
     elif (formulaNumber == 10):
         exactExists = False
-        y0 = s.sampleCOVID19ModelInitializer()
+        y0 = iv.sampleCOVID19ModelInitializer()
     elif ((formulaNumber == 1) or ((formulaNumber >= 4) and (formulaNumber <= 8))):
         y0.append(data[3])
     else:
@@ -105,22 +105,22 @@ Returns:
 def formula(i, t, y):
     config.log.info("formula() started")
     if (formulaNumber == 1):
-        return s.simple(i, t, y)
+        return iv.simple(i, t, y)
     elif (formulaNumber == 2):
-        return s.predatorPrey(i, t, y)
+        return iv.predatorPrey(i, t, y)
     elif (formulaNumber == 3):
-        return s.simple_sys(i, t, y)
+        return iv.simple_sys(i, t, y)
     elif (formulaNumber == 4):
-        return s.TestF4(i, t, y)
+        return iv.TestF4(i, t, y)
     elif (formulaNumber == 5):
-        return s.TestF5(i, t, y)
+        return iv.TestF5(i, t, y)
     elif (formulaNumber == 6):
-        return s.TestF6(i, t, y)
+        return iv.TestF6(i, t, y)
     elif (formulaNumber == 7):
-        return s.TestF7(i, t, y)
+        return iv.TestF7(i, t, y)
     elif (formulaNumber == 8):
-        return s.TestF8(i, t, y)
+        return iv.TestF8(i, t, y)
     elif (formulaNumber == 9):
-        return s.TestF9(i, t, y)
+        return iv.TestF9(i, t, y)
     elif (formulaNumber == 10):
-        return s.sampleCOVID19Model(i, t, y)
+        return iv.sampleCOVID19Model(i, t, y)

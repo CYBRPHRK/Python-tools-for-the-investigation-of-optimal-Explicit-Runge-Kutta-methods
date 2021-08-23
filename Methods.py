@@ -4,11 +4,11 @@ import config
 methodNumber = alpha = beta = case = 0
 
 def displayMethods():
-    print ("1. Forward Eulers Method")
+    print ("1. Forward Euler Method")
     print ("2. Explicit Midpoint Method")
-    print ("3. Heuns Second Order Method")
+    print ("3. Heun's Second Order Method")
     print ("4. Second Order RK Method")
-    print ("5. Heuns Third Order Method")
+    print ("5. Heun's Third Order Method")
     print ("6. Ralston's Third Order Method")
     print ("7. Third Order RK Method")
     print ("8. RK4 Method")
@@ -33,6 +33,7 @@ def setMethodValues(mname, auto, caseNumber=None):
             userChooseCase()
 
 def autoChooseCase():
+    # To fully automate this, the coefficients are assigned with the optimal values
     config.log.info("autoChooseCase() started")
     global alpha, beta
     caseInfo = ""

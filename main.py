@@ -8,8 +8,8 @@ import HermiteInterpolation as hi
 
 def displayMenu():
     config.log.info("displayMenu() started")
-    print ("1. Specific ODE on Specific Method")
-    print ("2. Specific ODE on All Methods and Export in an file")
+    print ("1. Specific IVODE on Specific Method")
+    print ("2. Specific IVODE on All Methods and Export results to a file")
     choice = input("Enter your choice: ")
     config.log.info("choice:", choice)
     print ("")
@@ -17,15 +17,15 @@ def displayMenu():
 
 def chooseMenuOption(choice):
     if (choice == 1):
-        specificODESpecificMethod()
+        specificIVODESpecificMethod()
     elif (choice == 2):
-        specificODEAllMethods()
+        specificIVODEAllMethods()
     else:
         config.log.error("Invalid Choice.")
         print ("Invalid Choice.\n")
         chooseMenuOption(displayMenu())
 
-def specificODESpecificMethod():
+def specificIVODESpecificMethod():
     t0, tf, y0 = f.setFormulaValues(f.displayFormulas())
     em.setInitialValues(t0, tf, y0)
 
@@ -47,8 +47,9 @@ def specificODESpecificMethod():
                 k += 1
             print ()
         j = j + 1
+    hi.plotHermite()
 
-def specificODEAllMethods():
+def specificIVODEAllMethods():
     t0, tf, y0 = f.setFormulaValues(f.displayFormulas())
     em.setInitialValues(t0, tf, y0)
 
@@ -96,7 +97,7 @@ def specificODEAllMethods():
             else:
                 i += 1
     if (f.exactExists):
-        em.methodAccuracyRatio(orders)
+        em.relToMinError(orders)
 
 config.log = log.Logger("Numerical Analysis Research Thesis Log")
 chooseMenuOption(displayMenu())

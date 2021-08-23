@@ -1,9 +1,17 @@
 import scipy.optimize as scope
-from math import inf
 import Logger.Logger as logger
 
 case = 0
 
+'''
+Name: optimize
+Description: This function finds the optimal values to minimize the given
+                Principal Error Coefficient and provides the results in
+                the console.
+Parameters:
+        f     : f is the name of the function used as Principal Error Coefficient.
+Returns: None
+'''
 def optimize(f):
     if (f == E2):
         alpha = [0.1]
@@ -21,6 +29,18 @@ def optimize(f):
     res = scope.minimize(f, alpha, tol=1e-8)
     print (res)
 
+'''
+Name: E2
+Description: This function represents as the Principal Error Coefficient
+                for second order ERK methods. Provided the value of the
+                free coefficient (alpha), this function provides the
+                Principal Error Coefficient value.
+Parameters:
+        alpha  : alpha is the list of values for the free coefficients.
+Returns:
+        result : result is the Principal Error Coefficient value for the
+                    given free coefficient.
+'''
 def E2(alpha):
     b = [1 - (1 / (2 * alpha[0])), 1 / (2 * alpha[0])]
     c = [0, alpha[0]]
@@ -34,6 +54,16 @@ def E2(alpha):
 
     return result
 
+'''
+Name: setValuesForThirdOrderCase1
+Description: This function sets and returns the values for all the
+                coefficients for Case 1 of the third order ERK methods.
+Parameters:
+        alpha  : alpha is the list of values for the free coefficients.
+Returns:
+        c2, c3, b1, b2, b3, a31, a32: coefficients for Case 1 of the
+                                        third order ERK methods.
+'''
 def setValuesForThirdOrderCase1(alpha):
     c2 = alpha[0]
     c3 = alpha[1]
@@ -47,6 +77,19 @@ def setValuesForThirdOrderCase1(alpha):
     log.info("c2, c3, b1, b2, b3, a31, a32", c2, c3, b1, b2, b3, a31, a32)
     return c2, c3, b1, b2, b3, a31, a32
 
+'''
+Names: E3Eq1, E3Eq2, E3Eq3, E3Eq4
+Description: These functions compute and return the weighted values of
+                the order conditions of Principal Error Coefficient
+                of third order ERK methods.
+Parameters:
+        c  : c are the nodes.
+        b  : b are the weights.
+        A  : A is the matrix.
+Returns:
+        weighted values of the order conditions of Principal Error
+            Coefficient of third order ERK methods.
+'''
 def E3Eq1(c, b, A):
     #For Equation 1, find b*c^3
     ccube = [c[0] ** 3, c[1] ** 3, c[2] ** 3]
@@ -89,6 +132,18 @@ def E3Eq4(c, b, A):
 
     return (bAsqc - (1/24))
 
+'''
+Name: E3
+Description: This function represents as the Principal Error Coefficient
+                for third order ERK methods. Provided the values of the
+                free coefficients (alpha), this function provides the
+                Principal Error Coefficient value.
+Parameters:
+        alpha  : alpha is the list of values for the free coefficients.
+Returns:
+        result : result is the Principal Error Coefficient value for the
+                    given free coefficients.
+'''
 def E3(alpha):
     if ((alpha[0] == 0) or (alpha[0] == 2/3) or (alpha[1] == 0) or (alpha[0] == alpha[1])):
         return 1
@@ -116,6 +171,16 @@ def E3(alpha):
 
     return result
 
+'''
+Name: setValuesForFourthOrder
+Description: This function sets and returns the values for all the
+                coefficients for the fourth order ERK methods.
+Parameters:
+        alpha  : alpha is the list of values for the free coefficients.
+Returns:
+        c2, c3, c4, b1, b2, b3, b4, a31, a32, a41, a42, a43:
+                 coefficients for the fourth order ERK methods.
+'''
 def setValuesForFourthOrder(alpha):
     if (case == 1):
         c2 = alpha[0]
@@ -186,6 +251,19 @@ def setValuesForFourthOrder(alpha):
     log.info("c2, c3, c4, b1, b2, b3, b4, a31, a32, a41, a42, a43", c2, c3, c4, b1, b2, b3, b4, a31, a32, a41, a42, a43)
     return c2, c3, c4, b1, b2, b3, b4, a31, a32, a41, a42, a43
 
+'''
+Names: E4Eq1, E4Eq2, E4Eq3, E4Eq4, E4Eq5, E4Eq6, E4Eq7, E4Eq8, E4Eq9
+Description: These functions compute and return the weighted values of
+                the order conditions of Principal Error Coefficient
+                of fourth order ERK methods.
+Parameters:
+        c  : c are the nodes.
+        b  : b are the weights.
+        A  : A is the matrix.
+Returns:
+        weighted values of the order conditions of Principal Error
+            Coefficient of fourth order ERK methods.
+'''
 def E4Eq1(c, b, A):
     #For Equation 1, find b*c^4
     cquad = [c[0] ** 4, c[1] ** 4, c[2] ** 4, c[3] ** 4]
@@ -205,6 +283,7 @@ def E4Eq2(c, b, A):
     bcsqAc = (bcsq[0] * Ac[0]) + (bcsq[1] * Ac[1]) + (bcsq[2] * Ac[2]) + (bcsq[3] * Ac[3])
 
     return ((1/2) * (bcsqAc - (1/10)))
+
 
 def E4Eq3(c, b, A):
     #For Equation 3, find b*c*A*c^2
@@ -305,6 +384,18 @@ def E4Eq9(c, b, A):
 
     return (bAAAc - (1/120))
 
+'''
+Name: E4
+Description: This function represents as the Principal Error Coefficient
+                for fourth order ERK methods. Provided the values of the
+                free coefficients (alpha), this function provides the
+                Principal Error Coefficient value.
+Parameters:
+        alpha  : alpha is the list of values for the free coefficients.
+Returns:
+        result : result is the Principal Error Coefficient value for the
+                    given free coefficients.
+'''
 def E4(alpha):
     if (case == 1):
         if ((alpha[0] <= 0) or (alpha[1] <= 0) or (alpha[0] == 1) or (alpha[1] == 1)
@@ -351,6 +442,14 @@ def E4(alpha):
     
     return result
 
+'''
+Name: displayMenu
+Description: This function displays the menu and asks the user to input
+                a choice.
+Parameters: None
+Returns:
+        choice : the interger value given by the user.
+'''
 def displayMenu():
     print ("1. Optimize E2")
     print ("2. Optimize E3")
@@ -359,6 +458,14 @@ def displayMenu():
     
     return int(choice);
 
+'''
+Name: chooseE4Case
+Description: This function display a menu for the cases of the fourth
+                order ERK methods and asks the user to input a choice.
+Parameters: None
+Returns:
+        choice : the interger value given by the user.
+'''
 def chooseE4Case():
     print ("1. Case 1: 0, c2, c3, 1 all distinct,",
            "\nc2≠1/2 and 3 - 4(c2 + c3) + 6*c2*c3 ≠ 0")
@@ -370,6 +477,14 @@ def chooseE4Case():
     
     return int(choice)
 
+'''
+Name: initializeOptimizer
+Description: This function initializes the optimization process for the
+                Principal Error Coefficient of user's choice.
+Parameters:
+        choice  : the interger value given by the user.
+Returns: None
+'''
 def initializeOptimizer(choice):
     global case
     if (choice == 1):

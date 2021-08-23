@@ -45,15 +45,21 @@ def h11_d(t):
     return ((3 * (t**2)) - (2 * t))
 
 '''
-Names: hermite
+Name: hermite
 Description: This function evaluates Hermite form for u_i(t_i + (theta * h_i))
+                and the associated defect.
 Parameters:
-        tt  : tt is the list of times after each step.
-        yy  : yy is the list of lists of y values at the given times at each step.
-        ffy : ffy is the function value for f(t, y) using the above values.
+        tt    : tt is the list of times after each step.
+        yy    : yy is the list of lists of y values at the given times at each step.
+        ffy   : ffy is the function value for f(t, y) using the above values.
 Returns:
-        uu  : uu is the list of lists of lists of Hermite forms at uniform points
-                for system of equations in each interval
+        t     : t is the list of points on the whole domain.
+        uu    : uu is the list of lists of lists of Hermite forms at uniform points
+                 for system of equations in each interval. These are known as
+                 the continuous approximate numerical solutions.
+        ffe   : ffe is the list of exact solutions at all the t values.
+        delta : delta is the defect associated with the continuous approximate
+                 numerical solution.
 '''
 def hermite(tt, yy, ffy):
     h = tt[1] - tt[0]
@@ -67,7 +73,7 @@ def hermite(tt, yy, ffy):
     d = []
     # To store all the u values computed
     uu = []
-    # To store all the exact values at all the t values
+    # To store all the exact solutions at all the t values
     ffe = []
     # To store all the defect values in variable 'delta'
     delta = []
@@ -129,6 +135,15 @@ def hermite(tt, yy, ffy):
             delta.append(d)
     return t, uu, ffe, delta
 
+'''
+Name: displayResults
+Description: This function performs Hermite interpolation and displays the
+                results in the console.
+Parameters:
+        reset  : reset is used to check if the lists containing the data require
+                    a reset or not. The default value for reset is False.
+Returns:    None
+'''
 def displayResults(reset=False):
     # For a full display of hermite interpolant 
     for i in range (0, len(config.t)):
@@ -147,7 +162,17 @@ def displayResults(reset=False):
         config.y = []
         config.f = []
 
+'''
+Name: plotHermite
+Description: This function performs Hermite interpolation and plots those results
+                on the graph. It provides two graphs:
+                Hermite Interpolant.html
+                Defect.html
+Parameters : None
+Returns    : None
+'''
 def plotHermite():
+    # Calling the hermite() function on the data at the smallest stepsize
     t, u, fe, d = hermite(config.t[len(config.t)-1], config.y[len(config.y)-1], config.f[len(config.f)-1])
 
     # Creating lists to prepare them for plotting
@@ -197,9 +222,3 @@ def plotHermite():
 
     # Showing the data in the browser
     bp.show(p)
-
-def test():
-    print ("h00(0) = " + str(h00(0)) + ", h00(1) = " + str(h00(1)) + ", h00'(0) = " + str(h00_d(0)) + ", h00'(1) = " + str(h00_d(1)))
-    print ("h10(0) = " + str(h10(0)) + ", h10(1) = " + str(h10(1)) + ", h10'(0) = " + str(h10_d(0)) + ", h10'(1) = " + str(h10_d(1)))
-    print ("h01(0) = " + str(h01(0)) + ", h01(1) = " + str(h01(1)) + ", h01'(0) = " + str(h01_d(0)) + ", h01'(1) = " + str(h01_d(1)))
-    print ("h11(0) = " + str(h11(0)) + ", h11(1) = " + str(h11(1)) + ", h11'(0) = " + str(h11_d(0)) + ", h11'(1) = " + str(h11_d(1)))
